@@ -1,0 +1,11 @@
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\bin\Debug\net8.0\ToDoApp.Concerns.deps.json
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\bin\Debug\net8.0\ToDoApp.Concerns.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\bin\Debug\net8.0\ToDoApp.Concerns.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ToDoApp.Concerns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ToDoApp.Concerns.AssemblyInfoInputs.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ToDoApp.Concerns.AssemblyInfo.cs
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ToDoApp.Concerns.csproj.CoreCompileInputs.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ToDoApp.Concerns.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\refint\ToDoApp.Concerns.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ToDoApp.Concerns.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Concerns\obj\Debug\net8.0\ref\ToDoApp.Concerns.dll

@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\ToDoApp.Contracts.csproj": {}
+  },
+  "projects": {
+    "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj",
+        "projectName": "ToDoApp.Concerns",
+        "projectPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj",
+        "packagesPath": "C:\\Users\\nikhil.m\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nikhil.m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\ToDoApp.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\ToDoApp.Contracts.csproj",
+        "projectName": "ToDoApp.Contracts",
+        "projectPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\ToDoApp.Contracts.csproj",
+        "packagesPath": "C:\\Users\\nikhil.m\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nikhil.m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj": {
+                "projectPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

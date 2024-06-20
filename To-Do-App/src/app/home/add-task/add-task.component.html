@@ -1,0 +1,16 @@
+<div class="modal-container">
+    <form class="modal" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <ul>
+            <li class="input-item title">
+                <input type="text" placeholder="Add title" formControlName="title">
+            </li>
+            <li class="input-item description">
+                <textarea type="text" placeholder="Add description" formControlName="description"></textarea>
+            </li>
+        </ul>
+        <div class="buttons">
+            <button type="button" class="btn-cancel" (click)="onAddTaskClose(false)">Cancel</button>
+            <button class="btn-save bg-orange">Save</button>
+        </div>
+    </form>
+</div>

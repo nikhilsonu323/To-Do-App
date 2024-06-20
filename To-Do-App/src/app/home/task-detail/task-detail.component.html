@@ -1,0 +1,31 @@
+<div class="details-box" [ngClass]="{'bg-orange': task.statusId == statuses.Completed}">
+    <div class="task-detail flex-column">
+        <div class="details flex-column">
+            <div class="title flex-column">
+                <div class="heading">{{task.title}}</div>
+                <div [ngClass]="{'text-gray': task.statusId == statuses.Active, 'text-brown': task.statusId == statuses.Completed}">Added 22 hours ago</div>
+            </div>
+            <div class="description flex-column">
+                <div class="heading">Description</div>
+                <div>{{task.description}}</div>
+            </div>
+        </div>
+
+        <div class="buttons" [ngClass]="{'image-bg-orange': task.statusId == statuses.Completed}">
+            <div>
+                <button>
+                    <img src="assets/material-symbols_check-box-outline.png" *ngIf="task.statusId == statuses.Active" alt="">
+                    <img src="assets/material-symbols_check-box.png" *ngIf="task.statusId == statuses.Completed" alt="">
+                </button>
+            </div>
+            <div>
+                <button *ngIf="task.statusId == statuses.Active" (click)="editTask()"><img src="assets/carbon_edit.png" alt=""></button>
+                <button class="m-left-16">
+                    <img src="assets/ant-design_delete-outlined.png" *ngIf="task.statusId == statuses.Active" alt="">
+                    <img src="assets/ant-design_delete-outlined-brown.png" *ngIf="task.statusId == statuses.Completed" alt="">
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

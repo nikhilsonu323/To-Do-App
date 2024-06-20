@@ -1,0 +1,15 @@
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\bin\Debug\net8.0\ToDoApp.Contracts.deps.json
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\bin\Debug\net8.0\ToDoApp.Contracts.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\bin\Debug\net8.0\ToDoApp.Contracts.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.AssemblyInfoInputs.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.AssemblyInfo.cs
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.csproj.CoreCompileInputs.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\refint\ToDoApp.Contracts.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ref\ToDoApp.Contracts.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\bin\Debug\net8.0\ToDoApp.Concerns.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\bin\Debug\net8.0\ToDoApp.Concerns.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp.Contracts.csproj.AssemblyReference.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Contracts\obj\Debug\net8.0\ToDoApp..8FC15748.Up2Date

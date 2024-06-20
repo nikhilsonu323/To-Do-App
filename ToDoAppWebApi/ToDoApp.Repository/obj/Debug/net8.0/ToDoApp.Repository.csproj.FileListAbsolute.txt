@@ -1,0 +1,14 @@
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.deps.json
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.runtimeconfig.json
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.csproj.AssemblyReference.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.AssemblyInfoInputs.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.AssemblyInfo.cs
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.csproj.CoreCompileInputs.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\refint\ToDoApp.Repository.dll
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.pdb
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.genruntimeconfig.cache
+C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ref\ToDoApp.Repository.dll

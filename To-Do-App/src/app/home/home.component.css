@@ -1,0 +1,8 @@
+.home-container{
+    display: grid;
+    grid-template-columns: 320px 1fr;
+}
+
+.blur{
+    filter: blur(5px);
+}

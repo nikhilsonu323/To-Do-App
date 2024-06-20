@@ -1,0 +1,15 @@
+.tasks-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task-title{
+    font-size: 28px;
+    font-weight: 600;
+}
+.delete-all-button{
+    border: none;
+    background-color: white;
+    margin-right: 50px;
+    cursor: pointer;
+}

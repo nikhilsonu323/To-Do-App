@@ -1,0 +1,26 @@
+<div class="sidebar">
+    <div class="logo text-brown">
+        <h1>To-Do App</h1>
+    </div>
+    <div class="contents">
+        <div class="add-task">
+            <button (click)="addTask()">
+                <span class="add-task-text">Add Task</span>
+                <span class="add-task-circle bg-brown">+</span>
+            </button>
+        </div>
+        <div class="navigations">
+            <ul>
+                <li>
+                    <a routerLink="/dashboard" routerLinkActive="bg-orange">Dashboard</a>
+                </li>
+                <li>
+                    <a routerLink="/active" routerLinkActive="bg-orange">Active</a>
+                </li>
+                <li>
+                    <a routerLink="/completed" routerLinkActive="bg-orange">Completed</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
