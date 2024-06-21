@@ -3,13 +3,17 @@
         <ul>
             <li class="input-item title">
                 <input type="text" placeholder="Add title" formControlName="title">
+                <p class="error" *ngIf="taskForm.get('title')?.touched && taskForm.get('title')?.invalid">
+                    Title is Required</p>
             </li>
             <li class="input-item description">
                 <textarea type="text" placeholder="Add description" formControlName="description"></textarea>
+                <p class="error" *ngIf="taskForm.get('description')?.touched && taskForm.get('description')?.invalid">
+                    Description is Required</p>
             </li>
         </ul>
         <div class="buttons">
-            <button type="button" class="btn-cancel" (click)="onAddTaskClose(false)">Cancel</button>
+            <button type="button" class="btn-cancel" (click)="onDialogClose()">Cancel</button>
             <button class="btn-save bg-orange">Save</button>
         </div>
     </form>

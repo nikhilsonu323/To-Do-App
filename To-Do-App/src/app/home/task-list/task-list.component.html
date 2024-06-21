@@ -1,8 +1,8 @@
 <ul class="tasks-list" #tasklist>
-    <li *ngFor="let task of tasks,let i = index " [ngClass]="{'bg-orange' : task.statusId == statuses.Completed}" (click)="showTaskDetails(i)">
-        <img [src]="task.statusId == statuses.Active ? 'assets/material-symbols_check-box-outline.png' : 'assets/material-symbols_check-box.png'" alt="">
+    <li *ngFor="let task of tasks" [ngClass]="{'bg-orange' : task.statusId == statuses.Completed}" (click)="showTaskDetails(task.taskId)">
+        <img [src]="task.statusId == statuses.Active ? 'assets/material-symbols_check-box-outline.png' : 'assets/material-symbols_check-box.png'" class="checkbox-img" alt="">
         <span>{{task.title}}</span>
-        <span class="details" *ngIf="taskDetailsId === i">
+        <span class="details" *ngIf="toShowTaskDetails && taskId === task.taskId">
             <task-detail [task]="task"></task-detail>
         </span>
     </li>

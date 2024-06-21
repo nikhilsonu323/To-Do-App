@@ -4,9 +4,9 @@ namespace ToDoApp.Contracts
 {
     public interface IAuthService
     {
-        public Task<AuthResponse?> Login(UserDTO loginUser);
+        public string? Login(UserDTO loginUser);
 
-        public Task<AuthResponse?> Register(UserDTO loginUser);
+        public bool Register(UserDTO loginUser);
 
     }
 }

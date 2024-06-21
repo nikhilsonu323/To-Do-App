@@ -36,10 +36,7 @@ namespace ToDoAppWebApi.Controllers
             if (userId == null) { return BadRequest(); }
             var isUpdated = await _taskService.UpdateTask(task, userId.Value);
             if (!isUpdated) {
-                return BadRequest(new
-                {
-                    error = "Task Id Doesn't Exist"
-                });
+                return NotFound();
             }
             return Created();
         }
@@ -62,13 +59,33 @@ namespace ToDoAppWebApi.Controllers
             return Ok(tasks);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{taskId}")]
         public async Task<IActionResult> GetTask([FromRoute] int taskId)
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
             var tasks = await _taskService.GetTask(taskId, userId.Value);
             return Ok(tasks);
+        }
+
+
+        [HttpDelete("{taskId}")]
+        public async Task<IActionResult> DeleteTask([FromRoute] int taskId)
+        {
+            var userId = GetUserId();
+            if (userId == null) { return BadRequest(); }
+            var isDeleted = await _taskService.DeleteTask(taskId, userId.Value);
+            if (!isDeleted) {  return NotFound(); }
+            return NoContent();
+        }
+
+        [HttpDelete("")]
+        public IActionResult DeleteAllTasks([FromQuery] DateTime? date)
+        {
+            var userId = GetUserId();
+            if (userId == null) { return BadRequest(); }
+            _taskService.DeleteAll(userId.Value, date);
+            return NoContent();
         }
 
         private int? GetUserId() 

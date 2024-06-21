@@ -1,4 +1,7 @@
-﻿namespace ToDoApp.Repository.Data.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace ToDoApp.Repository.Data.Models;
 
 public partial class User
 {

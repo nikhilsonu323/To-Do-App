@@ -3,24 +3,26 @@
         <div class="details flex-column">
             <div class="title flex-column">
                 <div class="heading">{{task.title}}</div>
-                <div [ngClass]="{'text-gray': task.statusId == statuses.Active, 'text-brown': task.statusId == statuses.Completed}">Added 22 hours ago</div>
+                <div class="time" [ngClass]="{'text-gray': task.statusId == statuses.Active, 'text-brown': task.statusId == statuses.Completed}">
+                    {{statuses.Active ? 'Added ' + timeSince(task.createdOn) : 'Completed ' + timeSince(task.completedOn!)}}
+                </div>
             </div>
             <div class="description flex-column">
                 <div class="heading">Description</div>
-                <div>{{task.description}}</div>
+                <div class="description-text">{{task.description}}</div>
             </div>
         </div>
 
         <div class="buttons" [ngClass]="{'image-bg-orange': task.statusId == statuses.Completed}">
             <div>
                 <button>
-                    <img src="assets/material-symbols_check-box-outline.png" *ngIf="task.statusId == statuses.Active" alt="">
+                    <img src="assets/material-symbols_check-box-outline.png" (click)="markTaskAsCompleted()" *ngIf="task.statusId == statuses.Active" alt="">
                     <img src="assets/material-symbols_check-box.png" *ngIf="task.statusId == statuses.Completed" alt="">
                 </button>
             </div>
             <div>
                 <button *ngIf="task.statusId == statuses.Active" (click)="editTask()"><img src="assets/carbon_edit.png" alt=""></button>
-                <button class="m-left-16">
+                <button class="m-left-16" (click)="deleteTask()">
                     <img src="assets/ant-design_delete-outlined.png" *ngIf="task.statusId == statuses.Active" alt="">
                     <img src="assets/ant-design_delete-outlined-brown.png" *ngIf="task.statusId == statuses.Completed" alt="">
                 </button>

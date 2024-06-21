@@ -1,26 +1,48 @@
 <div class="sidebar">
-    <div class="logo text-brown">
-        <h1>To-Do App</h1>
-    </div>
-    <div class="contents">
-        <div class="add-task">
-            <button (click)="addTask()">
-                <span class="add-task-text">Add Task</span>
-                <span class="add-task-circle bg-brown">+</span>
-            </button>
+    <div class="sidebar-header">
+        <div class="logo text-brown">
+            <h1>To-Do App</h1>
         </div>
-        <div class="navigations">
-            <ul>
-                <li>
-                    <a routerLink="/dashboard" routerLinkActive="bg-orange">Dashboard</a>
-                </li>
-                <li>
-                    <a routerLink="/active" routerLinkActive="bg-orange">Active</a>
-                </li>
-                <li>
-                    <a routerLink="/completed" routerLinkActive="bg-orange">Completed</a>
-                </li>
-            </ul>
+        <div class="contents">
+            <div class="add-task">
+                <button class="flex-center" (click)="addTask()">
+                    <span class="add-task-text">Add Task</span>
+                    <span class="add-task-circle flex-align-center bg-brown">+</span>
+                </button>
+            </div>
+            <div class="signout-container">
+                <button (click)="signout()" class="signout-btn flex-align-center bg-brown">
+                    <span>Sign out</span>
+                    <img src="assets/Vector.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navigations">
+        <ul>
+            <li>
+                <a routerLink="/dashboard" routerLinkActive="bg-orange">Dashboard</a>
+            </li>
+            <li>
+                <a routerLink="/active" routerLinkActive="bg-orange">Active</a>
+            </li>
+            <li>
+                <a routerLink="/completed" routerLinkActive="bg-orange">Completed</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dropdown-container">
+        <div  class="selectedRoute flex-align-center bg-orange" [ngClass]="{'bottom-radius-0': showDropdown}" (click)="toggleDropdown()">
+            <span>{{selectedOption.name}}</span>
+            <span><img src="assets/down-arrow.svg" alt=""></span>
+        </div>
+        <div class="dropdown" *ngIf="showDropdown">
+            <ng-container *ngFor="let route of routes">
+                <div class="options flex-align-center" *ngIf="selectedOption !== route"  (click)="onDropdownChange(route)">{{route.name}}</div>
+            </ng-container>
         </div>
     </div>
 </div>

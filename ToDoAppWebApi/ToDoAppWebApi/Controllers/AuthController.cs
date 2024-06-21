@@ -16,31 +16,31 @@ namespace ToDoAppWebApi.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserDTO loginDetails)
+        public IActionResult Login(UserDTO loginDetails)
         {
-            var result = await _authService.Login(loginDetails);
-            if (result == null)
+            var token = _authService.Login(loginDetails);
+            if (token == null)
             {
                 return BadRequest(new
                 {
                     error = new { message = "Invalid_Credentials" }
                 });
             }
-            return Ok(result);
+            return Ok(new { token });
         }
 
         [HttpPost("signup")]
-        public async Task<IActionResult> SignUp(UserDTO userDetails)
+        public IActionResult SignUp(UserDTO userDetails)
         {
-            var result = await _authService.Register(userDetails);
-            if (result == null)
+            var result = _authService.Register(userDetails);
+            if (!result)
             {
                 return Unauthorized(new
                 {
                     error = new { message = "User_Exists" }
                 });
             }
-            return Ok(result);
+            return Created();
         }
 
     }

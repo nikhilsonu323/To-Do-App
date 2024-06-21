@@ -10,7 +10,7 @@
 }
 
 .modal{
-    width: 888px;
+    width: clamp(750px,40vw,900px);
     height: 433px;
     padding: 44px 48px;
     border-radius: 12px;
@@ -69,4 +69,75 @@ button{
 }
 .btn-save{
     border: none;
+}
+.error{
+    margin-top: 6px;
+    color: Red;
+}
+@media (max-width: 900px) {
+    .modal{
+        width: 80%;
+        height: auto;
+        padding: 30px 34px;
+    }    
+    ul{
+        gap: 20px;
+    }
+    textarea{
+        font-size: 16px
+    }
+    input{
+        font-size: 20px;
+    }
+    input, textarea{
+        padding: 16px  20px;
+        border-radius: 10px;
+    }
+    .input-item.description{
+        height: 120px;
+    }
+    .buttons{
+        margin-top: 28px;
+        gap: 12px;
+    }
+    button{
+        width: auto;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 550px) {    
+    .modal{
+        width: 90%;
+        padding: 20px 24px;
+    }    
+    textarea{
+        font-size: 8px;
+    }
+    input{
+        font-size: 12px;
+    }
+    input, textarea{
+        padding: 12px  16px;
+        border-radius: 6px;
+    }
+    ul{
+        gap: 12px;
+    }
+    input, textarea{
+        padding: 12px  16px;
+    }
+    .buttons{
+        margin-top: 16px;
+    }
+    button{
+        border-radius: 6px;
+        font-size: 10px;
+    }
+    .error{
+        font-size: 8px;
+    }
 }

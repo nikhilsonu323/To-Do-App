@@ -22,8 +22,8 @@ namespace ToDoApp.Repository
 
         public async Task<bool> UpdateTask(ToDoTask task)
         {
-            var existingTask = await GetTask(task.TaskId);
-            if(existingTask == null) { return false; }
+            var existingTask = await GetTask(task.TaskId, task.UserId);
+            if (existingTask == null) { return false; }
 
             _dbContext.Entry(existingTask).State = EntityState.Detached;
 
@@ -33,17 +33,17 @@ namespace ToDoApp.Repository
             return true;
         }
 
-        public async Task<ToDoTask?> GetTask(int taskId)
+        public async Task<ToDoTask?> GetTask(int taskId, int userId)
         {
             return await _dbContext.Tasks.Include(task => task.Status)
-                .FirstOrDefaultAsync(task => task.TaskId == taskId);
+                .FirstOrDefaultAsync(task => task.TaskId == taskId && task.UserId == userId);
         }
 
         public async Task<List<ToDoTask>> GetTasks(int userId, DateTime? date, int? statusId)
         {
-            return  await _dbContext.Tasks.Include(task => task.Status)
+            return await _dbContext.Tasks.Include(task => task.Status)
                     .Where(task => task.UserId == userId &&
-                    (date == null ||  date.Value.Date == task.CreatedOn.Date) &&
+                    (date == null || date.Value.Date == task.CreatedOn.Date) &&
                     (statusId == null || statusId.Value == task.StatusId)
                     ).ToListAsync();
         }
@@ -64,6 +64,17 @@ namespace ToDoApp.Repository
             var deleted = _dbContext.Tasks.Remove(taskToBeDeleted);
             await _dbContext.SaveChangesAsync();
             return true;
+        }
+
+        public void DeleteAll(int userId, DateTime? date)
+        {
+            var tasksToBeDeleted = _dbContext.Tasks
+                            .Where(task => task.UserId == userId &&
+                             (date == null || task.CreatedOn.Date == date.Value.Date));
+            var isExists = tasksToBeDeleted.Any();
+            if (!tasksToBeDeleted.Any()) { return; }
+            _dbContext.Tasks.RemoveRange(tasksToBeDeleted);
+            _dbContext.SaveChanges();
         }
     }
 }

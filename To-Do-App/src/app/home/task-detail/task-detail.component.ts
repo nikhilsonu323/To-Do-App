@@ -23,4 +23,45 @@ export class TaskDetailComponent {
   editTask(){
     this.taskService.openDialogEditTask(this.task);
   }
+
+  markTaskAsCompleted(){
+    this.task.completedOn = new Date();
+    this.task.statusId = Statuses.Completed;
+    this.taskService.updateTask(this.task).subscribe({
+      next: () => this.taskService.onUsersTasksChanged()
+    });
+  }
+
+  deleteTask(){
+    this.taskService.deleteTask(this.task.taskId).subscribe({
+      next: () => this.taskService.onUsersTasksChanged()
+    });
+  }
+
+  timeSince(date: Date): string {
+    const now = new Date();
+    
+    const diffInMs = now.getTime() - new Date(date).getTime();
+  
+    const seconds = Math.floor(diffInMs / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const months = Math.floor(days / 30);
+    const years = Math.floor(days / 365);
+  
+    if (years > 0) {
+      return years + " years ago";
+    } else if (months > 0) {
+      return months + " months ago";
+    } else if (days > 0) {
+      return days + " days ago";
+    } else if (hours > 0) {
+      return hours + " hours ago";
+    } else if (minutes > 0) {
+      return minutes + " minutes ago";
+    } else {
+      return "just now";
+    }
+  }
 }

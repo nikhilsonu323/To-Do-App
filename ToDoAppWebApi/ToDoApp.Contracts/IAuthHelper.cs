@@ -6,6 +6,6 @@ namespace ToDoApp.Contracts
     {
         string Hash(string password);
         bool Verify(string hashHassword, string inputPassword);
-        string GetToken(int userId, DateTime expiresIn);
+        string GetToken(int userId);
     }
 }

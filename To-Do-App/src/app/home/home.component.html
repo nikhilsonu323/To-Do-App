@@ -4,4 +4,4 @@
         <router-outlet></router-outlet>
     </div>
 </div>
-<app-add-task [task]="editingTask" *ngIf="showAddTaskModal" (onAddTaskComplete)="addTaskCompleted($event)"></app-add-task>
+<app-add-task [task]="editingTask" *ngIf="showAddTaskModal" (onAddTaskComplete)="addTaskCompleted()"></app-add-task>

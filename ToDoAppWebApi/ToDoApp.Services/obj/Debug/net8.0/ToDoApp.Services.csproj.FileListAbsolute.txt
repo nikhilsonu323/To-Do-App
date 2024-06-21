@@ -17,3 +17,23 @@ C:\Projects\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Contracts.pd
 C:\Projects\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Repository.pdb
 C:\Projects\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.csproj.AssemblyReference.cache
 C:\Projects\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp..2D6B7A2D.Up2Date
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Services.deps.json
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Services.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Services.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Concerns.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Contracts.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Repository.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Concerns.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Contracts.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\bin\Debug\net8.0\ToDoApp.Repository.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.csproj.AssemblyReference.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.AssemblyInfoInputs.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.AssemblyInfo.cs
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.csproj.CoreCompileInputs.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.sourcelink.json
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp..2D6B7A2D.Up2Date
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\refint\ToDoApp.Services.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ToDoApp.Services.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Services\obj\Debug\net8.0\ref\ToDoApp.Services.dll

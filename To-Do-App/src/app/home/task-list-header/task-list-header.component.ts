@@ -1,5 +1,7 @@
 import { DatePipe, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TaskService } from '../../Services/task.service';
+import { ToastService } from '../../Services/toast.service';
 
 @Component({
   selector: 'task-list-header',
@@ -13,5 +15,24 @@ export class TaskListHeaderComponent {
   
   @Input() heading: string = '';
   @Input() showDelete: boolean = false;
+
+  constructor(private taskService: TaskService, private toastservice: ToastService){ }
+
+  deleteAllTask(){
+    if (!confirm('Are you sure you want to delete all tasks?')) {
+      return;
+    }
+    this.taskService.deleteAllTasks().subscribe({
+      next: () =>{
+        console.log("showin");
+        
+        this.toastservice.show("Tasks deleted successfully!");
+        this.taskService.onUsersTasksChanged();
+      },
+      error: (err) =>{
+        this.toastservice.show("An error occurred while deleting tasks","error");
+      }
+    });
+  }
 
 }

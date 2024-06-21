@@ -15,16 +15,16 @@ namespace ToDoApp.Repository
             _dbContext = dbContext;
         }
 
-        public async Task<User> AddUser(User user)
+        public User AddUser(User user)
         {
-            var userEntry =  await _dbContext.Users.AddAsync(user);
-            await _dbContext.SaveChangesAsync();
+            var userEntry =  _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
             return userEntry.Entity;
         }
 
-        public async Task<User?> GetUser(string username)
+        public User? GetUser(string username)
         {
-             return await _dbContext.Users.FirstOrDefaultAsync(user => user.Username == username);
+             return _dbContext.Users.FirstOrDefault(user => user.Username == username);
         }
     }
 }

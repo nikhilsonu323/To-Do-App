@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ToDoApp.Concerns;
+﻿using ToDoApp.Concerns;
 using ToDoApp.Repository.Data.Models;
 
 namespace ToDoApp.Services.Utilities
@@ -28,7 +23,7 @@ namespace ToDoApp.Services.Utilities
             };
         }
 
-        public static ToDoTask MapToTask(TaskDTO taskDTO,int userId)
+        public static ToDoTask MapToTask(TaskDTO taskDTO, int userId)
         {
             return new ToDoTask
             {
@@ -59,7 +54,7 @@ namespace ToDoApp.Services.Utilities
         public static List<TaskDTO> MapToTaskDTO(List<ToDoTask> toDoTasks)
         {
             var taskDTOs = new List<TaskDTO>();
-            foreach(var toDoTask in toDoTasks)
+            foreach (var toDoTask in toDoTasks)
             {
                 taskDTOs.Add(MapToTaskDTO(toDoTask));
             }

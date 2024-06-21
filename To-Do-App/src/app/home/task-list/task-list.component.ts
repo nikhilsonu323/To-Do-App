@@ -12,25 +12,26 @@ import { Statuses } from '../../Models/StatusModels';
   styleUrl: './task-list.component.css'
 })
 export class TaskListComponent implements OnInit{
-  
   @Input() tasks: Task[] = [];
+  @Input() toShowTaskDetails: boolean = true;
+
   @ViewChild('tasklist') taskListContainer!: ElementRef;
 
   statuses = Statuses
  
-  taskDetailsId: null | number = null;
+  taskId: null | number = null;
 
   ngOnInit(): void {
     document.body.addEventListener('click', (event: Event) => this.handleClickOutside(event));
   }
   
-  showTaskDetails(index: number){
-    this.taskDetailsId = index;
+  showTaskDetails(taskId: number){
+    this.taskId =  this.taskId === taskId ? null : taskId;
   }
 
   private handleClickOutside(event: Event) {
     if (event.target === this.taskListContainer.nativeElement || !this.taskListContainer.nativeElement.contains(event.target as Node)) {
-      this.taskDetailsId = null;
+      this.taskId = null;
     }
   }
 }

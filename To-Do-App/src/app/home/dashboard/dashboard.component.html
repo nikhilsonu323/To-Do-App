@@ -1,12 +1,18 @@
 <app-header [heading]="'Dashboard'"></app-header>
 <div class="main">
-    <section class="banner-section">
-        <div class="banner-content">
-            <div>
-                <h1>Hello, Beautiful Human!</h1>
-                <p>What do you want to do today?</p>
+    <section class="banner">
+        <div class="banner-section">
+            <div class="banner-content">
+                <div>
+                    <h1>Hello, Beautiful Human!</h1>
+                    <p>What do you want to do today?</p>
+                </div>
+                <img src="assets/young smiling woman working at laptop.png" class="banner-logo" alt="">
             </div>
-            <img src="assets/young smiling woman working at laptop.png" class="banner-logo" alt="">
+        </div>
+        <div class="task-stats">
+            <stat-card [percent]="completedTasksPercent" backgroundColor='brown' [statusType]="statuses.Completed"></stat-card>
+            <stat-card [percent]="activeTasksPercent" backgroundColor='orange' [statusType]="statuses.Active"></stat-card>
         </div>
     </section>
 
@@ -14,28 +20,11 @@
         <task-list-header heading="Today's Tasks" [showDelete]="true"></task-list-header>
         <div class="tasks-contianer">
             <div class="tasks-list">
-                <task-list [tasks]="tasks"></task-list>
+                <task-list [tasks]="activeTasks.concat(completedTasks)" [toShowTaskDetails]="false"></task-list>
             </div>
             <div class="task-stats">
-                <div class="stat-card bg-brown">
-                    <div class="stat-context">
-                        <img src="assets/icon-park-solid_check-one.png" alt="">
-                        <div>
-                            <!-- <div class="stat-percent">{{(( (completedTasks.length / (activeTasks.length+completedTasks.length) ) * 100) | number: '1.0-2') + '%' }}</div> -->
-                            <div class="stat-percent">{{(50| number: '1.0-2') + '%' }}</div>
-                            <div class="stat-description">Completed Tasks</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="stat-card bg-orange">
-                    <div class="stat-context">
-                        <img src="assets/icon-park-solid_time.png" alt="">
-                        <div>
-                            <div class="stat-percent">{{(50 | number: '1.0-2') + '%' }}</div>
-                            <div class="stat-description">Active Tasks</div>
-                        </div>
-                    </div>
-                </div>
+                <stat-card [percent]="completedTasksPercent" backgroundColor='brown' [statusType]="statuses.Completed"></stat-card>
+                <stat-card [percent]="activeTasksPercent" backgroundColor='orange' [statusType]="statuses.Active"></stat-card>
             </div>
         </div>
     </section>

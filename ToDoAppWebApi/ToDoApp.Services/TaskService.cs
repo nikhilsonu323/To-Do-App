@@ -16,13 +16,14 @@ namespace ToDoApp.Services
 
         public void AddTask(TaskDTO task, int userId)
         {
+            task.CreatedOn = DateTime.Now;
             _taskRepo.AddTask(Mapper.MapToTask(task, userId));
         }
 
         public async Task<TaskDTO?> GetTask(int taskId, int userId)
         {
-            var task = await _taskRepo.GetTask(taskId);
-            if (task == null || task.UserId != userId) { return null; }
+            var task = await _taskRepo.GetTask(taskId, userId);
+            if(task == null) { return null; }
             return Mapper.MapToTaskDTO(task);
         }
 
@@ -47,5 +48,11 @@ namespace ToDoApp.Services
         {
             return _taskRepo.DeleteTask(taskId, userId);
         }
+
+        public void DeleteAll(int userId, DateTime? date)
+        {
+            _taskRepo.DeleteAll(userId, date);
+        }
+
     }
 }

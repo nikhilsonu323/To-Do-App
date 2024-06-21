@@ -20,13 +20,13 @@ export class ActiveComponent {
 
   ngOnInit(): void {
     this.fetchTasks();
-    this.taskService.onTaskAddOrEdit.subscribe(() =>{
+    this.taskService.onTasksChange.subscribe(() =>{
       this.fetchTasks();
     })
   }
 
   private fetchTasks(){
-    this.taskService.getTasks(new Date(), Statuses.Active).subscribe(data =>{
+    this.taskService.getTasks(null, Statuses.Active).subscribe(data =>{
       this.activeTasks = data;
     });
   }

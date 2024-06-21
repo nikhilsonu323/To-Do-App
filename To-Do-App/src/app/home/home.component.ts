@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit{
     this.homeDiv.nativeElement.classList.add('blur');
   }
 
-  addTaskCompleted(isAdded: boolean){
+  addTaskCompleted(){
     this.showAddTaskModal = false;
     this.homeDiv.nativeElement.classList.remove('blur');
     this.editingTask = undefined;

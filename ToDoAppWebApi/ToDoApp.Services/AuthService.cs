@@ -17,9 +17,9 @@ namespace ToDoApp.Services
             _authHelper = authHelper;
         }
 
-        public async Task<AuthResponse?> Login(UserDTO loginUser)
+        public string? Login(UserDTO loginUser)
         {
-            var user = await _userRepo.GetUser(loginUser.Username);
+            var user = _userRepo.GetUser(loginUser.Username);
             if (user == null)
             {
                 return null;
@@ -30,34 +30,21 @@ namespace ToDoApp.Services
                 {
                     return null;
                 }
-                return GenerateAuthResponse(user.UserId);
+                return _authHelper.GetToken(user.UserId);
             }
         }
-        public async Task<AuthResponse?> Register(UserDTO userDTO)
+        public bool Register(UserDTO userDTO)
         {
-            var user = await _userRepo.GetUser(userDTO.Username);
+            var user = _userRepo.GetUser(userDTO.Username);
             if (user != null)
             {
-                return null;
+                return false;
             }
             var userToAdd = Mapper.MapToUser(userDTO);
             userToAdd.Password = _authHelper.Hash(userDTO.Password);
 
-            var addedUser = await _userRepo.AddUser(userToAdd);
-
-            return GenerateAuthResponse(addedUser.UserId);
-        }
-
-        private AuthResponse GenerateAuthResponse(int userId)
-        {
-            var expiresAt = DateTime.Now.AddDays(1);
-            TimeSpan timeDifference = expiresAt - DateTime.Now;
-
-            return new AuthResponse()
-            {
-                Token = _authHelper.GetToken(userId, expiresAt),
-                ExpiresIn = timeDifference.TotalSeconds
-            };
+            _userRepo.AddUser(userToAdd);
+            return true;
         }
     }
 }

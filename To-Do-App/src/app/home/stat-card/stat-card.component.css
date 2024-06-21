@@ -1,0 +1,74 @@
+.stat-card{
+    width: 188px;
+    height: 200px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+}
+.stat-context{
+    width: 130px;
+    height: 136px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    color: white
+}
+
+.stat-percent{
+    font-size: 32px;
+    font-weight: 700;
+}
+.stat-description{
+    white-space: nowrap;
+}
+
+.stat-context div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+
+@media (max-width: 900px) {
+    .stat-card{
+        width: auto;
+        height: auto;
+        padding: 28px 32px;
+    }
+    .stat-context{
+        flex-direction: row;
+        gap: 30px;
+        width: auto;
+        height: auto;
+    }
+    .stat-context img{
+        width: 36px;
+    }
+    .stat-percent{
+        font-size: 20px;
+    }
+    .stat-description{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+    .stat-card{
+        padding: 16px;
+        border-radius: 8px;
+    }
+    .stat-context{
+        gap: 20px;
+    }
+    .stat-context img{
+        width: 24px;
+    }
+    .stat-percent{
+        font-size: 16px;
+    }
+    .stat-description{
+        font-size: 8px;
+    }
+}

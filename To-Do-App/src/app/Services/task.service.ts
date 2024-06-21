@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 export class TaskService {
 
   private url = 'https://localhost:7285/api/Tasks';
-  onTaskAddOrEdit: Subject<void> = new Subject()
+  onTasksChange: Subject<void> = new Subject()
   editTask: EventEmitter<Task> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
@@ -35,8 +35,20 @@ export class TaskService {
     return this.http.post(this.url+'/Update', task);
   }
 
-  onTaskAddedOrEditedSucessfully(){
-    this.onTaskAddOrEdit.next();
+  deleteTask(taskId: number){
+    return this.http.delete(this.url+'/'+taskId);
+  }
+
+  deleteAllTasks(date?: Date){
+    let params = new HttpParams();
+    if(date){
+      params = params.append("date", date.toISOString())
+    }
+    return this.http.delete(this.url, {params: params});
+  }
+
+  onUsersTasksChanged(){
+    this.onTasksChange.next();
   }
 
   openDialogEditTask(task: Task){

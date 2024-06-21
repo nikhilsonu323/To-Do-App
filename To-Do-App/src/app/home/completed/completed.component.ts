@@ -20,13 +20,13 @@ export class CompletedComponent {
 
   ngOnInit(): void {
     this.fetchTasks();
-    this.taskService.onTaskAddOrEdit.subscribe(() =>{
+    this.taskService.onTasksChange.subscribe(() =>{
       this.fetchTasks();
     })
   }
 
   private fetchTasks(){
-    this.taskService.getTasks(new Date(), null).subscribe(data =>{
+    this.taskService.getTasks(null, Statuses.Completed).subscribe(data =>{
       this.completedTasks = data;
     });
   }

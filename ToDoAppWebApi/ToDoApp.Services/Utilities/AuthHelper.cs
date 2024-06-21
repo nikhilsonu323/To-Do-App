@@ -49,7 +49,7 @@ namespace ToDoApp.Services.Utilities
         }
 
 
-        public string GetToken(int userId, DateTime expiresIn)
+        public string GetToken(int userId)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -60,7 +60,7 @@ namespace ToDoApp.Services.Utilities
                 /*issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],*/
                 claims: userClaims,
-                expires: expiresIn,
+                expires: DateTime.Now.AddDays(1),
                 signingCredentials: signingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

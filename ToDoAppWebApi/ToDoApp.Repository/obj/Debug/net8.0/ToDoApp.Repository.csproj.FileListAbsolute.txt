@@ -12,3 +12,18 @@ C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\refint\ToDoApp.Rep
 C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.pdb
 C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.genruntimeconfig.cache
 C:\Projects\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ref\ToDoApp.Repository.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.deps.json
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.runtimeconfig.json
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\bin\Debug\net8.0\ToDoApp.Repository.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.csproj.AssemblyReference.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.AssemblyInfoInputs.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.AssemblyInfo.cs
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.csproj.CoreCompileInputs.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.sourcelink.json
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\refint\ToDoApp.Repository.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.pdb
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ToDoApp.Repository.genruntimeconfig.cache
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoApp.Repository\obj\Debug\net8.0\ref\ToDoApp.Repository.dll

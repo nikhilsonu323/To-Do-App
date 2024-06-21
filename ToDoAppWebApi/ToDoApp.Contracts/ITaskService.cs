@@ -15,5 +15,7 @@ namespace ToDoApp.Contracts
         Task<List<TaskDTO>> GetAllTasks(int userId);
 
         Task<bool> DeleteTask(int taskId, int userId);
+
+        void DeleteAll(int userId, DateTime? date);
     }
 }

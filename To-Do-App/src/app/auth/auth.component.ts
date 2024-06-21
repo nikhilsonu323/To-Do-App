@@ -1,10 +1,11 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
 import { AuthResponse } from '../Models/AuthModels';
 import { Observable } from 'rxjs';
+import { ToastService } from '../Services/toast.service';
 
 @Component({
   selector: 'auth',
@@ -21,7 +22,7 @@ export class AuthComponent implements OnInit {
   authForm: FormGroup;
   @ViewChild('passwordField') passwordField!: ElementRef;
  
-  constructor(private router: Router, private authService: AuthService){
+  constructor(private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute, private toastService: ToastService){
     this.authForm = new FormGroup({
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
@@ -29,7 +30,11 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.authService.isLoggedIn){
+    this.activatedRoute.data.subscribe(data =>{
+      let authType = data['mode'];
+      this.isLoginPage = authType === 'login' 
+    })
+    if(this.authService.token){
       this.router.navigate(["dashboard"]);
     }
     this.authForm.valueChanges.subscribe(()=>{
@@ -38,7 +43,10 @@ export class AuthComponent implements OnInit {
   }
 
   toggleMode(){
-    this.isLoginPage = !this.isLoginPage;
+    if(this.isLoginPage)
+      this.router.navigate(['signup']);
+    else
+      this.router.navigate(['login']);
   }
 
   togglePassword() {
@@ -47,7 +55,7 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit(){
-    let authObs: Observable<AuthResponse>;
+    let authObs: Observable<any>;
     if(this.authForm.invalid){ return; }
     if(this.isLoginPage){
       authObs = this.authService.login(this.authForm.value);
@@ -58,6 +66,7 @@ export class AuthComponent implements OnInit {
     authObs.subscribe({
       error: (err) => {
         this.errrorMessage = err;
+        this.toastService.show(this.errrorMessage!, 'error')
       }
     });
   }
