@@ -10,8 +10,9 @@ import { Subject } from 'rxjs';
 export class TaskService {
 
   private url = 'https://localhost:7285/api/Tasks';
+
   onTasksChange: Subject<void> = new Subject()
-  editTask: EventEmitter<Task> = new EventEmitter();
+  editTask: Subject<Task> = new Subject();
 
   constructor(private http: HttpClient) { }
 
@@ -32,7 +33,7 @@ export class TaskService {
   }
 
   updateTask(task: Task){
-    return this.http.post(this.url+'/Update', task);
+    return this.http.put(this.url+'/Update', task);
   }
 
   deleteTask(taskId: number){
@@ -52,6 +53,6 @@ export class TaskService {
   }
 
   openDialogEditTask(task: Task){
-    this.editTask.emit(task);
+    this.editTask.next(task);
   }
 }

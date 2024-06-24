@@ -4,12 +4,14 @@
             <li class="input-item title">
                 <input type="text" placeholder="Add title" formControlName="title">
                 <p class="error" *ngIf="taskForm.get('title')?.touched && taskForm.get('title')?.invalid">
-                    Title is Required</p>
+                    {{getErrorMessage(taskForm.get('title')?.errors, 'Title')}}
+                </p>
             </li>
             <li class="input-item description">
                 <textarea type="text" placeholder="Add description" formControlName="description"></textarea>
                 <p class="error" *ngIf="taskForm.get('description')?.touched && taskForm.get('description')?.invalid">
-                    Description is Required</p>
+                    {{getErrorMessage(taskForm.get('description')?.errors, 'Description')}}
+                </p>
             </li>
         </ul>
         <div class="buttons">

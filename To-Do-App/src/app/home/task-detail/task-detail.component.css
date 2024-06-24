@@ -33,6 +33,8 @@
 }
 .description-text{
     overflow-wrap: break-word;
+    max-height: 150px;
+    overflow: auto;
 }
 
 .flex-column{

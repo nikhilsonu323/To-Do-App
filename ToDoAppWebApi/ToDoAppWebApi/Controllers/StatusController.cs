@@ -21,12 +21,5 @@ namespace ToDoAppWebApi.Controllers
         {
             return Ok(await _statusService.GetStatuses());
         }
-
-        /*        [HttpPost]
-                public IActionResult Add(StatusDTO status)
-                {
-                    _statusService.Add(status);
-                    return Created();
-                }*/
     }
 }

@@ -18,7 +18,7 @@
     margin-left: 60px;
 }
 .banner-content div>h1{
-    font-size: clamp(20px, 4vw, 44px);
+    font-size: clamp(20px, 3vw, 44px);
     font-weight: 700;
     margin: 0;
 }
@@ -67,6 +67,26 @@ li{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .main{
+        width: 90%;
+    }  
+    .banner-content div{
+        margin-left: 30px;
+    } 
+    .banner-section{
+        height: 250px;
+    }
+    .banner-content{
+        height: 200px;
+    }
+    .banner-logo{
+        height: 100%;
+        top: 40px;
+        right: 0;
+    }
 }
 
 @media (max-width: 900px) {

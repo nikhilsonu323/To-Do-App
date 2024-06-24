@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Task } from '../../Models/Task';
 import { TaskService } from '../../Services/task.service';
 import { Statuses } from '../../Models/StatusModels';
@@ -22,7 +22,7 @@ export class AddTaskComponent implements OnInit, OnDestroy{
 
   constructor(private taskService: TaskService, private toastService: ToastService){
     this.taskForm = new FormGroup({
-      title: new FormControl(null,[ Validators.required, Validators.pattern(/\S+/),]),
+      title: new FormControl(null,[ Validators.required, Validators.pattern(/\S+/), Validators.maxLength(100)]),
       description: new FormControl(null, [Validators.required, Validators.pattern(/\S+/)])
     })
   }
@@ -55,10 +55,10 @@ export class AddTaskComponent implements OnInit, OnDestroy{
 
   onSubmit(){
     let formData = this.taskForm.value;
-    
     if(this.taskForm.invalid) { return; }
     let task = this.getTaskDetails();
     let taskObs: Observable<Object>;
+    
     if(this.task){
       //Update Mode
       taskObs = this.taskService.updateTask(task);
@@ -71,14 +71,27 @@ export class AddTaskComponent implements OnInit, OnDestroy{
     taskObs.subscribe({
       next: () => {
         let message = this.task == null ? 'Task Added Sucessfully' : 'Task Updated Sucessfully';
+        console.log(message);
+        
         this.toastService.show(message, "success");
         this.taskService.onUsersTasksChanged();
         this.closeModal();
       },
-      error: (err) => {
+      error: () => {
+        console.log("error");
         this.toastService.show("An Error occured, Couldn't add Task", "error");
       }  
     })
+  }
+
+  getErrorMessage(err: ValidationErrors | null | undefined, fieldName: string){
+    if(!err) return '';
+    if(err['required'] || err['pattern'])
+      return fieldName + ' is Required'
+    if(err['maxlength']){
+      return fieldName + ' cannot exceed '+err['maxlength'].requiredLength +' characters.'
+    }
+    return '';
 
   }
 

@@ -1,7 +1,8 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'sidebar',
@@ -11,10 +12,14 @@ import { AuthService } from '../../Services/auth.service';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit{
-
+  
   selectedOption = {value: '/dashboard', name: 'Dashbooard'};
   showDropdown = false;
-  routes = [{value: '/dashboard', name: 'Dashbooard'},{value: '/active', name: 'Active'}, {value: '/completed', name: 'Completed'}];
+  routes: {[key: string]: string} = {
+    '/dashboard' : 'Dashboard',
+    '/active' : 'Active',
+    '/completed' : 'Completed'
+  }
   @Output() onAddTaskClick: EventEmitter<null> = new EventEmitter()
   @ViewChild('SelectedOption') selectedOptionDiv!: ElementRef;
 
@@ -23,31 +28,35 @@ export class SidebarComponent implements OnInit{
   ngOnInit(): void {
     let url = window.location.href.split('/');
     let currentRoute = '/'+url[url.length-1];
-    for (let i = 0; i < this.routes.length; i++){
-      if(this.routes[i].value == currentRoute){
-        this.selectedOption = this.routes[i];
-        break;
-      }
-    }
+    this.selectedOption = { value: currentRoute, name: this.routes[currentRoute] }
+
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe(event => {
+      let url = (event as NavigationEnd).url;
+      this.selectedOption = { value: url, name: this.routes[url] }
+    });
   }
       
+  getRoutesKeys(){
+    return Object.keys(this.routes)
+  }
 
   addTask() {
     this.onAddTaskClick.emit()
   }
-  signout(){
-    debugger
-    this.authService.logout();
 
+  signout(){
+    this.authService.logout();
   }
 
-  onDropdownChange(route: any){
+  onDropdownChange(route: typeof this.selectedOption){
     this.selectedOption = route;
     this.router.navigate([this.selectedOption.value]);
     this.showDropdown = false;
   }
-
+  
   toggleDropdown(){
     this.showDropdown = !this.showDropdown;
   }
+
 }

@@ -1,2 +1,7 @@
-<app-toaster></app-toaster>
-<router-outlet/>
+<div class="spinner" *ngIf="showLoader">
+    <app-spinner></app-spinner>
+</div>
+<div #contents>
+    <app-toaster></app-toaster>
+    <router-outlet/>
+</div>

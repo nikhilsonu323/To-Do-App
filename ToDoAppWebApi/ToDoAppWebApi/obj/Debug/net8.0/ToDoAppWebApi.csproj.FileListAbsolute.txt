@@ -291,3 +291,6 @@ C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi
 C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoAppWebApi\obj\Debug\net8.0\ToDoAppWebApi.pdb
 C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoAppWebApi\obj\Debug\net8.0\ToDoAppWebApi.genruntimeconfig.cache
 C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoAppWebApi\obj\Debug\net8.0\ref\ToDoAppWebApi.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoAppWebApi\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoAppWebApi\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\nikhil.m\OneDrive - Technovert\Documents\GitHub\To-Do-App\ToDoAppWebApi\ToDoAppWebApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

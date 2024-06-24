@@ -9,10 +9,18 @@
             <ul>
                 <li>
                     <input type="text" name="username" placeholder="Username" formControlName="username">
+                    <p class="error" *ngIf="authForm.get('username')?.touched && authForm.get('username')?.invalid">
+                        {{getErrorMessage(authForm.get('username')?.errors)}}
+                    </p>
                 </li>
-                <li class="form-item-password">
-                    <input type="password" name="password" placeholder="Password" formControlName="password" #passwordField>
-                    <img src="assets/clarity_eye-hide-line.png" alt="" class="password-toggle-icon" (click)="togglePassword()">
+                <li>
+                    <div class="form-item-password">
+                        <input type="password" name="password" placeholder="Password" formControlName="password" #passwordField>
+                        <img src="assets/clarity_eye-hide-line.png" alt="" class="password-toggle-icon" (click)="togglePassword()">
+                    </div>
+                    <p class="error" *ngIf="authForm.get('password')?.touched && authForm.get('password')?.invalid">
+                        {{getErrorMessage(authForm.get('password')?.errors)}}
+                    </p>
                 </li>
                 <li>
                     <p class="error-message" *ngIf="errrorMessage">{{errrorMessage}}</p>

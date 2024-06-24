@@ -140,7 +140,7 @@
     "ContainingType": "ToDoAppWebApi.Controllers.TasksController",
     "Method": "UpdateTask",
     "RelativePath": "api/Tasks/Update",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [

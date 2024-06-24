@@ -35,7 +35,6 @@
 }
 .auth-title>p{    
     margin: 16px 0 0 0;
-    /* font-size: 20px; */
     text-align: center;
 }
 
@@ -113,6 +112,9 @@ button{
 }
 li span{
     cursor: pointer;
+}
+.error{
+    color: red;
 }
 
 @media (width > 1500px) {

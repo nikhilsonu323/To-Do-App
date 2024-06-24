@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { NgFor } from '@angular/common';
 import { TaskListHeaderComponent } from '../task-list-header/task-list-header.component';
@@ -7,6 +7,7 @@ import { Task } from '../../Models/Task';
 import { TaskService } from '../../Services/task.service';
 import { Statuses } from '../../Models/StatusModels';
 import { StatCardComponent } from '../stat-card/stat-card.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'dashboard',
@@ -15,10 +16,10 @@ import { StatCardComponent } from '../stat-card/stat-card.component';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   today = new Date();
-  // tasks: Task[] = [];
-  statuses = Statuses
+  statuses = Statuses;
+  taskChangesSubsricption!: Subscription;
   activeTasks: Task[] = [];
   completedTasks: Task[] = [];
 
@@ -29,16 +30,16 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchTasks();
-    this.taskService.onTasksChange.subscribe(() =>{
+    this.taskChangesSubsricption = this.taskService.onTasksChange.subscribe(() =>{
       this.fetchTasks();
     })
   }
 
-  private fetchTasks(){
-    // this.taskService.getTasks(null, null).subscribe(data =>{
-    //   this.tasks = data;
-    // });
+  ngOnDestroy(): void {
+    this.taskChangesSubsricption.unsubscribe()
+  }
 
+  private fetchTasks(){
     this.taskService.getTasks(null, Statuses.Active).subscribe(data =>{
       this.activeTasks = data;
       this.calculatePercentage();

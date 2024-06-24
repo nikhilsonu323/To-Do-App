@@ -41,6 +41,10 @@ namespace ToDoApp.Services
 
         public Task<bool> UpdateTask(TaskDTO task, int userId)
         {
+            if(task.StatusId == (int)Statuses.Completed)
+            {
+                task.CompletedOn = DateTime.Now;
+            }
             return _taskRepo.UpdateTask(Mapper.MapToTask(task, userId));
         }
 

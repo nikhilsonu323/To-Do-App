@@ -22,14 +22,8 @@
 
     <div class="navigations">
         <ul>
-            <li>
-                <a routerLink="/dashboard" routerLinkActive="bg-orange">Dashboard</a>
-            </li>
-            <li>
-                <a routerLink="/active" routerLinkActive="bg-orange">Active</a>
-            </li>
-            <li>
-                <a routerLink="/completed" routerLinkActive="bg-orange">Completed</a>
+            <li *ngFor="let route of getRoutesKeys()">
+                <a [routerLink]="route" routerLinkActive="bg-orange">{{routes[route]}}</a>
             </li>
         </ul>
     </div>
@@ -40,8 +34,8 @@
             <span><img src="assets/down-arrow.svg" alt=""></span>
         </div>
         <div class="dropdown" *ngIf="showDropdown">
-            <ng-container *ngFor="let route of routes">
-                <div class="options flex-align-center" *ngIf="selectedOption !== route"  (click)="onDropdownChange(route)">{{route.name}}</div>
+            <ng-container *ngFor="let route of getRoutesKeys()">
+                <div class="options flex-align-center" *ngIf="selectedOption.value !== route"  (click)="onDropdownChange({value: route, name: routes[route]})">{{routes[route]}}</div>
             </ng-container>
         </div>
     </div>

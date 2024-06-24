@@ -1,9 +1,12 @@
+using FluentValidation.AspNetCore;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ToDoApp.Repository.Data;
 using ToDoAppWebApi;
+using ToDoAppWebApi.Validators;
 
 internal class Program
 {
@@ -39,6 +42,10 @@ internal class Program
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]!))
             };
         });
+
+
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<TaskValidator>();
 
         builder.Services.AddDependencies();
 

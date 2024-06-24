@@ -4,7 +4,7 @@
             <div class="title flex-column">
                 <div class="heading">{{task.title}}</div>
                 <div class="time" [ngClass]="{'text-gray': task.statusId == statuses.Active, 'text-brown': task.statusId == statuses.Completed}">
-                    {{statuses.Active ? 'Added ' + timeSince(task.createdOn) : 'Completed ' + timeSince(task.completedOn!)}}
+                    {{task.statusId == statuses.Active ? ('Added ' + timeSince(task.createdOn) ): ('Completed ' + timeSince(task.completedOn!))}}
                 </div>
             </div>
             <div class="description flex-column">

@@ -29,7 +29,7 @@ namespace ToDoAppWebApi.Controllers
             return Created();
         }
 
-        [HttpPost("Update")]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateTask([FromBody] TaskDTO task)
         {
             var userId = GetUserId();

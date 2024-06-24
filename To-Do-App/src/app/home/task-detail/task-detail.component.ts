@@ -1,8 +1,9 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Statuses } from '../../Models/StatusModels';
 import { Task } from '../../Models/Task';
 import { TaskService } from '../../Services/task.service';
+import { ToastService } from '../../Services/toast.service';
 
 
 @Component({
@@ -12,13 +13,17 @@ import { TaskService } from '../../Services/task.service';
   templateUrl: './task-detail.component.html',
   styleUrl: './task-detail.component.css'
 })
-export class TaskDetailComponent {
+export class TaskDetailComponent implements OnInit{
   // Chnaged to type task
   @Input() task!: Task;
 
   statuses = Statuses
 
-  constructor(private taskService: TaskService){ }
+  constructor(private taskService: TaskService, private toastService: ToastService){ }
+
+  ngOnInit(): void {
+    console.log(this.task);
+  }
 
   editTask(){
     this.taskService.openDialogEditTask(this.task);
@@ -28,13 +33,25 @@ export class TaskDetailComponent {
     this.task.completedOn = new Date();
     this.task.statusId = Statuses.Completed;
     this.taskService.updateTask(this.task).subscribe({
-      next: () => this.taskService.onUsersTasksChanged()
+      next: () => {
+        this.toastService.show("Task Marked as completed","success");
+        this.taskService.onUsersTasksChanged()
+      },
+      error: () =>{
+        this.toastService.show("An error occured","error")
+      }
     });
   }
 
   deleteTask(){
     this.taskService.deleteTask(this.task.taskId).subscribe({
-      next: () => this.taskService.onUsersTasksChanged()
+      next: () => {
+        this.toastService.show("Task deleted sucessfully","success");
+        this.taskService.onUsersTasksChanged()
+      },
+      error: () =>{
+        this.toastService.show("An error occured","error")
+      }
     });
   }
 

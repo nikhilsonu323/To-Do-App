@@ -19,21 +19,18 @@ export class AuthService {
     return this.http.post<{token: string}>(this.url+'/login',user).pipe(
       catchError((err)=> this.handleError(err)), 
       tap((res) => {
-        this.toastService.show("Login successful. You're now signed in.","success")
         this.handleToken(res);
       }));
   }
   
   signup(user: User){
     return this.http.post(this.url+'/signup',user).pipe(
-      catchError((err)=> this.handleError(err)),
-      tap((res) => this.toastService.show("Sign up successful!","success")) );
+      catchError((err)=> this.handleError(err)));
   }
 
   logout(){
-    console.log("Removing item");
-    
     localStorage.removeItem("token");
+    this.token = null;    
     this.router.navigate(['login']);
   }
 
@@ -45,9 +42,7 @@ export class AuthService {
     this.token = token;
   }
 
-  private handleError(err: any){
-    console.log(err);
-    
+  private handleError(err: any){    
     let errorMessage = 'An Unkonwn error Has occured';
     if(!err.error || !err.error.error){
       return throwError(() => errorMessage);
@@ -65,7 +60,6 @@ export class AuthService {
 
   private handleToken(response: {token: string}){
     this.token = response.token;
-    debugger
     localStorage.setItem("token", this.token);
     this.router.navigate(['dashboard']);
   }

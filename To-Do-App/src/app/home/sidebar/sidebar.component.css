@@ -14,7 +14,6 @@
     display: none;
 }
 .logo{
-    width: 320px;
     padding: 24px 0;
     text-align: center;
 }
@@ -88,7 +87,7 @@ li a{
     display: block;
     width: 100%;
     text-align: center;
-    padding: 12px 116px;
+    padding: 12px 12px;
 }
 
 
@@ -120,14 +119,29 @@ li a{
 }
 
 
+@media (max-width: 1400px) {
+    .logo>h1{
+        font-size: 28px;
+    }
+    .add-task button{
+        width: 160px;
+        padding: 0 20px;    
+    }
+    .contents{
+        margin-top: 30px;
+    }
+    .add-task-circle{
+        width: 28px;
+        height: 28px;
+        font-size: 24px;
+    }
+
+}
+
 @media (max-width: 900px) {
     .sidebar{
         height: auto;
         position: relative;
-    }
-    .logo[_ngcontent-ng-c3035791037] {
-        width: auto;
-        text-align: center;
     }
     .navigations{
         display: none;
@@ -160,7 +174,6 @@ li a{
 @media (max-width: 550px) {
 
     .logo>h1{
-        font-weight: 700;
         font-size: 16px;
         margin: 0;
     }
