@@ -54,7 +54,7 @@ internal class Program
         {
             opt.AddPolicy("AllowAll", policy =>
             {
-                policy.AllowAnyOrigin()
+                policy.WithOrigins("https://localhost:4200")
                       .AllowAnyMethod()
                       .AllowAnyHeader();
             });

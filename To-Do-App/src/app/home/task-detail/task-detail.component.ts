@@ -20,7 +20,6 @@ export class TaskDetailComponent implements OnInit{
   statuses = Statuses
 
   constructor(private taskService: TaskService, private toastService: ToastService){ }
-
   ngOnInit(): void {
     console.log(this.task);
   }

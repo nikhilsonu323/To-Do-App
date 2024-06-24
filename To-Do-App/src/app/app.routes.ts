@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { authGuard } from './RouteGuards/authGuards';
 import { Statuses } from './Models/StatusModels';
 import { TasksContainerComponent } from './home/tasks-container/tasks-container.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {path: 'login', component: AuthComponent, data: {mode: 'login'}},

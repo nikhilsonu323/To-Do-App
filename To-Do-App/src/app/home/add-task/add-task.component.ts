@@ -6,11 +6,12 @@ import { Statuses } from '../../Models/StatusModels';
 import { Observable } from 'rxjs';
 import { ToastService } from '../../Services/toast.service';
 import { NgIf } from '@angular/common';
+import { TrapFocusDirective } from '../../Directives/trap-focus.directive';
 
 @Component({
   selector: 'app-add-task',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, TrapFocusDirective],
   templateUrl: './add-task.component.html',
   styleUrl: './add-task.component.css'
 })
@@ -36,12 +37,13 @@ export class AddTaskComponent implements OnInit, OnDestroy{
       })
     }
   }
+
   ngOnDestroy(): void {
     document.body.classList.remove('overflow-none');
   }
 
   onDialogClose(){
-    if(this.taskForm.touched)
+    if(this.taskForm.dirty)
     {
       if(confirm("Do you want to exit without saving")){ this.closeModal(); }
       return;

@@ -25,6 +25,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     }));
 };
 
+
 export const loaderInterceptor: HttpInterceptorFn = (req, next) => {
   const toastService = inject(ToastService);
   toastService.showLoader();

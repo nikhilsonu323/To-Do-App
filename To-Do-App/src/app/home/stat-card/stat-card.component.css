@@ -47,11 +47,6 @@
 
 
 @media (max-width: 900px) {
-    /* .stat-card{
-        width: auto;
-        height: auto;
-        padding: 28px 32px;
-    } */
     .stat-context{
         flex-direction: row;
         gap: 30px;

@@ -7,7 +7,7 @@ import { Task } from '../../Models/Task';
 import { TaskService } from '../../Services/task.service';
 import { Statuses } from '../../Models/StatusModels';
 import { StatCardComponent } from '../stat-card/stat-card.component';
-import { Subscription } from 'rxjs';
+import { Subscription, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'dashboard',
@@ -40,15 +40,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   private fetchTasks(){
-    this.taskService.getTasks(null, Statuses.Active).subscribe(data =>{
-      this.activeTasks = data;
+    forkJoin([this.taskService.getTasks(null, Statuses.Active), this.taskService.getTasks(null, Statuses.Completed)])
+    .subscribe(([activeTasks, completedTasks]) =>{
+      this.activeTasks = activeTasks;
+      this.completedTasks = completedTasks;
       this.calculatePercentage();
-    });
-
-    this.taskService.getTasks(null, Statuses.Completed).subscribe(data =>{
-      this.completedTasks = data;
-      this.calculatePercentage();
-    });
+    })
   }
 
   private calculatePercentage(){

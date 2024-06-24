@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using ToDoApp.Concerns;
@@ -35,7 +34,8 @@ namespace ToDoAppWebApi.Controllers
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
             var isUpdated = await _taskService.UpdateTask(task, userId.Value);
-            if (!isUpdated) {
+            if (!isUpdated)
+            {
                 return NotFound();
             }
             return Created();
@@ -75,7 +75,7 @@ namespace ToDoAppWebApi.Controllers
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
             var isDeleted = await _taskService.DeleteTask(taskId, userId.Value);
-            if (!isDeleted) {  return NotFound(); }
+            if (!isDeleted) { return NotFound(); }
             return NoContent();
         }
 
@@ -88,7 +88,7 @@ namespace ToDoAppWebApi.Controllers
             return NoContent();
         }
 
-        private int? GetUserId() 
+        private int? GetUserId()
         {
             var userIdString = User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value;
             int userId;
