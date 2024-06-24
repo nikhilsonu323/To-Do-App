@@ -16,8 +16,8 @@
         <div class="buttons" [ngClass]="{'image-bg-orange': task.statusId == statuses.Completed}">
             <div>
                 <button>
-                    <img src="assets/material-symbols_check-box-outline.png" (click)="markTaskAsCompleted()" *ngIf="task.statusId == statuses.Active" alt="">
-                    <img src="assets/material-symbols_check-box.png" *ngIf="task.statusId == statuses.Completed" alt="">
+                    <img src="assets/material-symbols_check-box-outline.png" (click)="toggleStatus()" *ngIf="task.statusId == statuses.Active" alt="">
+                    <img src="assets/material-symbols_check-box.png" (click)="toggleStatus()" *ngIf="task.statusId == statuses.Completed" alt="">
                 </button>
             </div>
             <div>

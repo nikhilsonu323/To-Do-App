@@ -42,6 +42,19 @@ export class TaskDetailComponent implements OnInit{
       }
     });
   }
+  
+  toggleStatus(){
+    this.task.statusId = this.task.statusId === Statuses.Active ? Statuses.Completed : Statuses.Active;
+    this.taskService.updateTask(this.task).subscribe({
+      next: () => {
+        this.toastService.show("Task updated sucessfully","success");
+        this.taskService.onUsersTasksChanged()
+      },
+      error: () =>{
+        this.toastService.show("An error occured","error")
+      }
+    });
+  }
 
   deleteTask(){
     this.taskService.deleteTask(this.task.taskId).subscribe({
