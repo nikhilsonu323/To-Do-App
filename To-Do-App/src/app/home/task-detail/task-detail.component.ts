@@ -13,33 +13,15 @@ import { ToastService } from '../../Services/toast.service';
   templateUrl: './task-detail.component.html',
   styleUrl: './task-detail.component.css'
 })
-export class TaskDetailComponent implements OnInit{
-  // Chnaged to type task
+export class TaskDetailComponent{
   @Input() task!: Task;
 
   statuses = Statuses
 
   constructor(private taskService: TaskService, private toastService: ToastService){ }
-  ngOnInit(): void {
-    console.log(this.task);
-  }
 
   editTask(){
     this.taskService.openDialogEditTask(this.task);
-  }
-
-  markTaskAsCompleted(){
-    this.task.completedOn = new Date();
-    this.task.statusId = Statuses.Completed;
-    this.taskService.updateTask(this.task).subscribe({
-      next: () => {
-        this.toastService.show("Task Marked as completed","success");
-        this.taskService.onUsersTasksChanged()
-      },
-      error: () =>{
-        this.toastService.show("An error occured","error")
-      }
-    });
   }
   
   toggleStatus(){

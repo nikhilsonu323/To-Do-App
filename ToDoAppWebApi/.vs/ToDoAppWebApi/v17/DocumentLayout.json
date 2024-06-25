@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CC00E99-F10A-46C4-8E43-AC22AA412D5A}|ToDoApp.Repository\\ToDoApp.Repository.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoapp.repository\\data\\todoappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CC00E99-F10A-46C4-8E43-AC22AA412D5A}|ToDoApp.Repository\\ToDoApp.Repository.csproj|solutionrelative:todoapp.repository\\data\\todoappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CC00E99-F10A-46C4-8E43-AC22AA412D5A}|ToDoApp.Repository\\ToDoApp.Repository.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoapp.repository\\taskrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CC00E99-F10A-46C4-8E43-AC22AA412D5A}|ToDoApp.Repository\\ToDoApp.Repository.csproj|solutionrelative:todoapp.repository\\taskrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEFCB0DF-0EF2-4A22-9EE2-BF950E36A193}|ToDoApp.Services\\ToDoApp.Services.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoapp.services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEFCB0DF-0EF2-4A22-9EE2-BF950E36A193}|ToDoApp.Services\\ToDoApp.Services.csproj|solutionrelative:todoapp.services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3354E767-E232-4431-AD0F-7609FD1E44A2}|ToDoApp.Contracts\\ToDoApp.Contracts.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoapp.contracts\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3354E767-E232-4431-AD0F-7609FD1E44A2}|ToDoApp.Contracts\\ToDoApp.Contracts.csproj|solutionrelative:todoapp.contracts\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\appsettings.json",
-              "RelativeDocumentMoniker": "ToDoAppWebApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\appsettings.json",
-              "RelativeToolTip": "ToDoAppWebApi\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-24T11:03:10.162Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -53,35 +40,45 @@
               "RelativeDocumentMoniker": "ToDoAppWebApi\\Program.cs",
               "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Program.cs",
               "RelativeToolTip": "ToDoAppWebApi\\Program.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAIwDgAAAAmAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwDYAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T11:02:35.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-25T05:39:42.89Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ToDoAppContext.cs",
-              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Repository\\Data\\ToDoAppContext.cs",
-              "RelativeDocumentMoniker": "ToDoApp.Repository\\Data\\ToDoAppContext.cs",
-              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Repository\\Data\\ToDoAppContext.cs",
-              "RelativeToolTip": "ToDoApp.Repository\\Data\\ToDoAppContext.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAwwCUAAAAXAAAA",
+              "Title": "TaskRepo.cs",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Repository\\TaskRepo.cs",
+              "RelativeDocumentMoniker": "ToDoApp.Repository\\TaskRepo.cs",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Repository\\TaskRepo.cs",
+              "RelativeToolTip": "ToDoApp.Repository\\TaskRepo.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwC4AAAB+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T08:24:32.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-25T05:17:05.889Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TaskService.cs",
-              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Services\\TaskService.cs",
-              "RelativeDocumentMoniker": "ToDoApp.Services\\TaskService.cs",
-              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Services\\TaskService.cs",
-              "RelativeToolTip": "ToDoApp.Services\\TaskService.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Title": "ITaskService.cs",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\ITaskService.cs",
+              "RelativeDocumentMoniker": "ToDoApp.Contracts\\ITaskService.cs",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Contracts\\ITaskService.cs",
+              "RelativeToolTip": "ToDoApp.Contracts\\ITaskService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T08:18:32.675Z",
+              "WhenOpened": "2024-06-25T05:16:09.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "ToDoAppWebApi\\Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "ToDoAppWebApi\\Controllers\\TasksController.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAtwDoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T05:13:18.805Z",
               "EditorCaption": ""
             }
           ]

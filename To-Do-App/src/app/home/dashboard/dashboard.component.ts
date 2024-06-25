@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   private fetchTasks(){
-    forkJoin([this.taskService.getTasks(null, Statuses.Active), this.taskService.getTasks(null, Statuses.Completed)])
+    forkJoin([this.taskService.getTasks({statusId: Statuses.Active}), this.taskService.getTasks({statusId: Statuses.Completed})])
     .subscribe(([activeTasks, completedTasks]) =>{
       this.activeTasks = activeTasks;
       this.completedTasks = completedTasks;

@@ -1,5 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Task } from '../Models/Task';
 import { Subject } from 'rxjs';
 
@@ -16,13 +16,20 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  getTasks(date: Date | null,statusId: number | null){
+  getTasks(queryParams?: {
+    createdOn?: Date,
+    CompletedOn?: Date,
+    statusId?: number
+  }){
     let params = new HttpParams();
-    if(date){
-      params = params.append("date", date.toISOString())
+    if(queryParams?.createdOn){
+      params = params.append("createdOn", queryParams.createdOn.toLocaleString())
     }
-    if(statusId){
-      params = params.append("statusId", statusId)
+    if(queryParams?.CompletedOn){
+      params = params.append("completedOn", queryParams.CompletedOn.toLocaleString())
+    }
+    if(queryParams?.statusId){
+      params = params.append("statusId", queryParams.statusId)
     }
 
     return this.http.get<Task[]>(this.url, {params: params});

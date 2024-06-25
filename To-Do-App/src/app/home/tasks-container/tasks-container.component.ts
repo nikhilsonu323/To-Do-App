@@ -41,7 +41,7 @@ export class TasksContainerComponent implements OnInit, OnDestroy{
   }
 
   private fetchTasks(){
-    this.taskService.getTasks(null, this.taskType).subscribe(data =>{
+    this.taskService.getTasks({statusId: this.taskType}).subscribe(data =>{
       this.tasks = data;
     });
   }

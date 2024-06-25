@@ -39,11 +39,12 @@ namespace ToDoApp.Repository
                 .FirstOrDefaultAsync(task => task.TaskId == taskId && task.UserId == userId);
         }
 
-        public async Task<List<ToDoTask>> GetTasks(int userId, DateTime? date, int? statusId)
+        public async Task<List<ToDoTask>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
         {
             return await _dbContext.Tasks.Include(task => task.Status)
                     .Where(task => task.UserId == userId &&
-                    (date == null || date.Value.Date == task.CreatedOn.Date) &&
+                    (createdOn == null || createdOn.Value.Date == task.CreatedOn.Date) &&
+                    (completedOn == null || (task.CompletedOn != null && task.CompletedOn.Value.Date == completedOn.Value.Date)) &&
                     (statusId == null || statusId.Value == task.StatusId)
                     ).ToListAsync();
         }

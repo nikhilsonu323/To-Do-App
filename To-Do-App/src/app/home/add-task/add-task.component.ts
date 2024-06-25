@@ -56,7 +56,6 @@ export class AddTaskComponent implements OnInit, OnDestroy{
   }
 
   onSubmit(){
-    let formData = this.taskForm.value;
     if(this.taskForm.invalid) { return; }
     let task = this.getTaskDetails();
     let taskObs: Observable<Object>;

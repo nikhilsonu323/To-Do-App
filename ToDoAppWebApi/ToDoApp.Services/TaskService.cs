@@ -27,9 +27,9 @@ namespace ToDoApp.Services
             return Mapper.MapToTaskDTO(task);
         }
 
-        public async Task<List<TaskDTO>> GetTasks(int userId, DateTime? date, int? statusId)
+        public async Task<List<TaskDTO>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
         {
-            var tasks = await _taskRepo.GetTasks(userId, date, statusId);
+            var tasks = await _taskRepo.GetTasks(userId, createdOn, completedOn, statusId);
             return Mapper.MapToTaskDTO(tasks);
         }
 

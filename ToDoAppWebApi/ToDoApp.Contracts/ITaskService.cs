@@ -10,7 +10,7 @@ namespace ToDoApp.Contracts
 
         Task<TaskDTO?> GetTask(int taskId, int userId);
 
-        Task<List<TaskDTO>> GetTasks(int userId, DateTime? date, int? statusId);
+        Task<List<TaskDTO>> GetTasks(int userId, DateTime? createdAt, DateTime? completedAt, int? statusId);
 
         Task<List<TaskDTO>> GetAllTasks(int userId);
 

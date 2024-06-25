@@ -37,8 +37,6 @@ internal class Program
                 ValidateAudience = false,
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                /*ValidIssuer = builder.Configuration["JWT:Issuer"],
-                ValidAudience = builder.Configuration["JWT:Audience"],*/
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]!))
             };
         });
@@ -54,7 +52,7 @@ internal class Program
         {
             opt.AddPolicy("AllowAll", policy =>
             {
-                policy.WithOrigins("https://localhost:4200")
+                policy.AllowAnyOrigin()
                       .AllowAnyMethod()
                       .AllowAnyHeader();
             });

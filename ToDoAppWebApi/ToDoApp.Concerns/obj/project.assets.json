@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj",
+      "projectUniqueName": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj",
       "projectName": "ToDoApp.Concerns",
-      "projectPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj",
+      "projectPath": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\ToDoApp.Concerns.csproj",
       "packagesPath": "C:\\Users\\nikhil.m\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\obj\\",
+      "outputPath": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoApp.Concerns\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nikhil.m\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -23,6 +23,7 @@
 .title>.heading{
     font-size: 28px;
     font-weight: 700;
+    word-wrap: break-word;
 }
 .description>.heading{
     font-size: 20px;

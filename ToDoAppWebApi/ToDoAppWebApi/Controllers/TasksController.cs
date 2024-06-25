@@ -42,11 +42,11 @@ namespace ToDoAppWebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetTasks([FromQuery] DateTime? date, [FromQuery] int? statusId)
+        public async Task<IActionResult> GetTasks([FromQuery] DateTime? createdOn, [FromQuery] DateTime? completedOn, [FromQuery] int? statusId)
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            var tasks = await _taskService.GetTasks(userId.Value, date, statusId);
+            var tasks = await _taskService.GetTasks(userId.Value, createdOn, completedOn, statusId);
             return Ok(tasks);
         }
 
