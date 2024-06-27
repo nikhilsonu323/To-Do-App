@@ -3,10 +3,10 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
-import { AuthResponse } from '../Models/AuthModels';
 import { Observable } from 'rxjs';
 import { ToastService } from '../Services/toast.service';
 import { CustomValidator } from './customValidator';
+import { AuthType } from '../Models/AuthModels';
 
 @Component({
   selector: 'auth',
@@ -33,7 +33,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data =>{
       let authType = data['mode'];
-      this.isLoginPage = authType === 'login' 
+      this.isLoginPage = authType === AuthType.Login; 
     })
     if(this.authService.token){
       this.router.navigate(["dashboard"]);

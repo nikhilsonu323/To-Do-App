@@ -30,7 +30,6 @@ export class TasksContainerComponent implements OnInit, OnDestroy{
       this.taskType = taskStatus;
       this.fetchTasks();
     })
-
     this.taskChangesSubsricption = this.taskService.onTasksChange.subscribe(() =>{
       this.fetchTasks();
     })

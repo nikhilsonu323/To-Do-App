@@ -2,7 +2,9 @@
     width: 85%;
     margin: auto;
 }
-
+.flex-1{
+    flex: 1;
+}
 .banner-section{
     height: 282px;
 }
@@ -123,7 +125,7 @@ li{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 0;
+        gap: 1rem;
     }
     .today-tasks .task-stats{
         display: none;

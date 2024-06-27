@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="task-stats">
-            <stat-card [percent]="completedTasksPercent" backgroundColor='brown' [statusType]="statuses.Completed"></stat-card>
-            <stat-card [percent]="activeTasksPercent" backgroundColor='orange' [statusType]="statuses.Active"></stat-card>
+            <stat-card class="flex-1" [percent]="completedTasksPercent" backgroundColor='brown' [statusType]="statuses.Completed"></stat-card>
+            <stat-card class="flex-1" [percent]="activeTasksPercent" backgroundColor='orange' [statusType]="statuses.Active"></stat-card>
         </div>
     </section>
 

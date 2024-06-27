@@ -6,8 +6,6 @@ import { ToastMessage } from '../Models/ToastModels';
   providedIn: 'root'
 })
 export class ToastService {
-  private httpCallsRunning = 0;
-
   private spinnerCount = 0;
   private toastSubject = new Subject<ToastMessage>();
 

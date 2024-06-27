@@ -24,7 +24,7 @@ export class TaskListComponent implements OnInit{
   ngOnInit(): void {
     document.body.addEventListener('click', (event: Event) => this.handleClickOutside(event));
   }
-  
+
   showTaskDetails(taskId: number){
     this.taskId =  this.taskId === taskId ? null : taskId;
   }

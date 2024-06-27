@@ -17,7 +17,9 @@ li{
     gap: 20px;
     box-shadow: 2px 2px 6px 0px #0000001A;
 }
-
+.title{
+    overflow-wrap: anywhere;
+}
 @media (max-width: 550px) {
     ul.tasks-list li:not(:first-child){
         margin-top: 10px;

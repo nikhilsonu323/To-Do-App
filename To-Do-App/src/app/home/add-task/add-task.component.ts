@@ -19,7 +19,7 @@ export class AddTaskComponent implements OnInit, OnDestroy{
   
   taskForm: FormGroup;
   @Input() task?: Task;
-  @Output() onAddTaskComplete: EventEmitter<null> = new EventEmitter();
+  @Output() close: EventEmitter<null> = new EventEmitter();
 
   constructor(private taskService: TaskService, private toastService: ToastService){
     this.taskForm = new FormGroup({
@@ -52,7 +52,7 @@ export class AddTaskComponent implements OnInit, OnDestroy{
   }
   
   closeModal(){
-    this.onAddTaskComplete.emit();
+    this.close.emit();
   }
 
   onSubmit(){
@@ -72,8 +72,6 @@ export class AddTaskComponent implements OnInit, OnDestroy{
     taskObs.subscribe({
       next: () => {
         let message = this.task == null ? 'Task Added Sucessfully' : 'Task Updated Sucessfully';
-        console.log(message);
-        
         this.toastService.show(message, "success");
         this.taskService.onUsersTasksChanged();
         this.closeModal();

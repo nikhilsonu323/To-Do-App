@@ -29,13 +29,6 @@ namespace ToDoApp.Services.Utilities
             var salt = RandomNumberGenerator.GetBytes(saltSize);
             var hash = Rfc2898DeriveBytes.Pbkdf2(password, salt, iterations, _hashAlgorithmName, keySize);
             return string.Join(delimiter, Convert.ToBase64String(salt), Convert.ToBase64String(hash));
-            /*using (var sha256 = SHA256.Create())
-            {
-                var combinedBytes = Encoding.UTF8.GetBytes(password + Convert.ToBase64String(salt));
-                var hash = sha256.ComputeHash(combinedBytes);
-                return Convert.ToBase64String(salt.Concat(hash).ToArray());
-            }*/
-
         }
 
         public bool Verify(string hashHassword, string inputPassword)
@@ -57,10 +50,8 @@ namespace ToDoApp.Services.Utilities
                 new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
             };
             var token = new JwtSecurityToken(
-                /*issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],*/
                 claims: userClaims,
-                expires: DateTime.Now.AddDays(1),
+                expires: DateTime.Now.AddHours(1),
                 signingCredentials: signingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

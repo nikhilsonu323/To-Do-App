@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { AuthService } from './auth.service';
-import { catchError, finalize, tap, throwError } from 'rxjs';
+import { catchError, finalize, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { ToastService } from './toast.service';
 
@@ -19,6 +19,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
     return next(modifiedReq).pipe(catchError((err: HttpErrorResponse) =>{
       if(err.status == 401){
+        localStorage.removeItem('token');
         router.navigate(['login']);
       }
       return throwError(() => err)

@@ -1,5 +1,5 @@
 .stat-card{
-    padding: 30px 40px;
+    padding: 30px 45px;
     border-radius: 12px;
     display: grid;
     place-items: center;
@@ -54,13 +54,13 @@
         height: auto;
     }
     .stat-context img{
-        width: 36px;
+        width: 6vw;
     }
     .stat-percent{
-        font-size: 20px;
+        font-size: 4vw;
     }
     .stat-description{
-        font-size: 12px;
+        font-size: 2vw;
     }
 }
 

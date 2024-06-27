@@ -3,7 +3,7 @@ export interface User{
     password: string;
 }
 
-export interface AuthResponse{
-    token: string;
-    expiresIn: number;
+export enum AuthType{
+    Login,
+    Signup
 }
