@@ -22,6 +22,7 @@ internal class Program
 
         builder.Services.AddDbContext<ToDoAppContext>(opt =>
         {
+            Console.WriteLine(builder.Configuration.GetConnectionString("ToDoAppConnection"));
             opt.UseSqlServer(builder.Configuration.GetConnectionString("ToDoAppConnection"));
         });
 
@@ -63,11 +64,10 @@ internal class Program
         app.UseCors("AllowAll");
 
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        
 
         app.UseHttpsRedirection();
 

@@ -41,6 +41,8 @@ namespace ToDoApp.Repository
 
         public async Task<List<ToDoTask>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
         {
+            var a = DateOnly.FromDateTime(createdOn!.Value);
+            var tirn = a.ToDateTime(TimeOnly.MinValue);
             return await _dbContext.Tasks.Include(task => task.Status)
                     .Where(task => task.UserId == userId &&
                     (createdOn == null || createdOn.Value.Date == task.CreatedOn.Date) &&

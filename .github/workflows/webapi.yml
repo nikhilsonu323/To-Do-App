@@ -1,0 +1,40 @@
+name : Publish Full Stack TODO APP 🚀🚀🚀🚀🚀
+ 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feedback
+ 
+env:
+  AZURE_WEBAPI_NAME: nikhiltodoapi
+  AZURE_WEBAPI_PACKAGE_PATH: "./publish"
+ 
+ 
+jobs:
+  deploy-and-publish:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - uses : actions/checkout@v4
+ 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+ 
+      - name: Restore
+        run: dotnet restore ./ToDoAppWebApi/ToDoAppWebApi.sln
+ 
+      - name: Build
+        run: dotnet build ./ToDoAppWebApi/ToDoAppWebApi.sln --configuration Release --no-restore
+ 
+      - name:  Publish
+        run: dotnet publish ./ToDoAppWebApi/ToDoAppWebApi.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPI_PACKAGE_PATH }}'
+ 
+      - name: Deployement
+        uses: azure/webapps-deploy@v2
+        with:  
+          app-name: ${{ env.AZURE_WEBAPI_NAME }}
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          package: "${{ env.AZURE_WEBAPI_PACKAGE_PATH }}"
