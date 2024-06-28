@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, tap, throwError } from 'rxjs';
 import { ToastService } from './toast.service';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private url = 'https://localhost:7285/api/Auth';
+  private url = environment.auth;
   token: string | null = null;
 
   constructor(private http: HttpClient, private router: Router, private toastService: ToastService) { }

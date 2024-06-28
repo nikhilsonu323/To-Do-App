@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Task } from '../Models/Task';
 import { Subject } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Subject } from 'rxjs';
 })
 export class TaskService {
 
-  private url = 'https://localhost:7285/api/Tasks';
+  private url = environment.tasks;
 
   onTasksChange: Subject<void> = new Subject()
   editTask: Subject<Task> = new Subject();
