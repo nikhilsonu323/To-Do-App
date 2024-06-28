@@ -14,7 +14,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     }
 
     const modifiedReq = req.clone({
-      headers : req.headers.append("Authorization","Bearer " + token)
+      headers : req.headers.append("Authorization","Bearer " + token).append("Access-Control-Allow-Origin","*")
     });
 
     return next(modifiedReq).pipe(catchError((err: HttpErrorResponse) =>{

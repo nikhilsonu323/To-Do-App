@@ -53,7 +53,7 @@ internal class Program
         {
             opt.AddPolicy("AllowAll", policy =>
             {
-                policy.AllowAnyOrigin()
+                policy.WithOrigins("https://feedback.d14fnc79dak6e4.amplifyapp.com/")
                       .AllowAnyMethod()
                       .AllowAnyHeader();
             });
