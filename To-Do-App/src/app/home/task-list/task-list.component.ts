@@ -14,6 +14,7 @@ import { Statuses } from '../../Models/StatusModels';
 export class TaskListComponent implements OnInit{
   @Input() tasks: Task[] = [];
   @Input() toShowTaskDetails: boolean = true;
+  // @Input() taskType?: Statuses;
 
   @ViewChild('tasklist') taskListContainer!: ElementRef;
 

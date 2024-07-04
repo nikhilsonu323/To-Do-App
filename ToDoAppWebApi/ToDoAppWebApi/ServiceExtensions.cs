@@ -3,6 +3,7 @@ using ToDoApp.Repository;
 using ToDoApp.Repository.Interfaces;
 using ToDoApp.Services;
 using ToDoApp.Services.Utilities;
+using ToDoAppWebApi.Middlewares;
 
 namespace ToDoAppWebApi
 {
@@ -10,6 +11,7 @@ namespace ToDoAppWebApi
     {
         public static IServiceCollection AddDependencies(this IServiceCollection services)
         {
+            services.AddTransient<ExceptionHandlingMiddleware>();
 
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<ITaskService, TaskService>();

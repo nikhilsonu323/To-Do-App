@@ -7,6 +7,8 @@ using System.Text;
 using ToDoApp.Repository.Data;
 using ToDoAppWebApi;
 using ToDoAppWebApi.Validators;
+using Serilog;
+using ToDoAppWebApi.Middlewares;
 
 internal class Program
 {
@@ -14,15 +16,18 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
 
+        // Add services to the container.
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        Log.Logger = new LoggerConfiguration()
+                    .ReadFrom.Configuration(builder.Configuration)
+                    .CreateLogger();
+
         builder.Services.AddDbContext<ToDoAppContext>(opt =>
         {
-            Console.WriteLine(builder.Configuration.GetConnectionString("ToDoAppConnection"));
             opt.UseSqlServer(builder.Configuration.GetConnectionString("ToDoAppConnection"));
         });
 
@@ -62,12 +67,15 @@ internal class Program
         var app = builder.Build();
 
         app.UseCors("AllowAll");
+        
 
         // Configure the HTTP request pipeline.
-        
-        app.UseSwagger();
-        app.UseSwaggerUI();
-        
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
 
         app.UseHttpsRedirection();
 

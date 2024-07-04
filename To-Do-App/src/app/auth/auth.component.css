@@ -64,7 +64,6 @@ li:not(:first-child){
 }
 li input{
     width: 100%;
-    /* height: 68px; */
     padding: 22px;
     border-radius: 12px;
     border: none;
@@ -110,9 +109,6 @@ button{
 }
 li span{
     cursor: pointer;
-}
-.error{
-    color: red;
 }
 
 @media (width > 1500px) {
@@ -209,5 +205,4 @@ li span{
 
 .error-message{
     color: red;
-    margin: 0;
 }

@@ -25,8 +25,8 @@ export class AuthComponent implements OnInit {
  
   constructor(private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute, private toastService: ToastService){
     this.authForm = new FormGroup({
-      username: new FormControl(null, [Validators.required, CustomValidator.usernameValidator]),
-      password: new FormControl(null, [Validators.required,CustomValidator.passwordValidator])
+      username: new FormControl('', [Validators.required, CustomValidator.usernameValidator]),
+      password: new FormControl('', [Validators.required,CustomValidator.passwordValidator])
     })
   }
 
@@ -82,7 +82,7 @@ export class AuthComponent implements OnInit {
   getErrorMessage(err: ValidationErrors | null | undefined){
     if(!err){ return '' }
     if(err['required'])
-      return 'This Field is required'
+      return 'This Field is required.'
     
     if(err['maxLengthExceeded'])
       return "Username cannot exceed 50 characters."
@@ -90,6 +90,12 @@ export class AuthComponent implements OnInit {
     if(err['minLengthRequired'])
       return "Password must be at least 8 characters long."
     
+    if(err['Leadingspaces'])
+      return "Leading spaces are not allowed."
+
+    if(err['Spaces'])
+      return "Spaces are not allowed in this field.."
+
     return '';
   }
 
