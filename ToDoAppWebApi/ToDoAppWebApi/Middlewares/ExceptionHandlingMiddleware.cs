@@ -1,5 +1,4 @@
-﻿
-using Serilog;
+﻿using Serilog;
 using System.Security.Claims;
 
 namespace ToDoAppWebApi.Middlewares
@@ -14,13 +13,13 @@ namespace ToDoAppWebApi.Middlewares
             }
             catch(Exception exception)
             {
-                context.Response.StatusCode = 500;
+                context.Response.StatusCode = 200;
                 await context.Response.WriteAsync(exception.Message);
-                LogError(exception, context);
+                await context.Response.WriteAsync( GetError(exception, context));
             }
         }
 
-        private void LogError(Exception? exception, HttpContext content)
+        private string GetError(Exception? exception, HttpContext content)
         {
             string errorMessage = "";
             while (exception != null)
@@ -28,7 +27,8 @@ namespace ToDoAppWebApi.Middlewares
                 errorMessage += exception.Message + "\n";
                 exception = exception.InnerException;
             }
-            var userId = GetUserId(content);
+            return errorMessage;
+/*            var userId = GetUserId(content);
 
             var errorLog = new
             {
@@ -37,7 +37,7 @@ namespace ToDoAppWebApi.Middlewares
                 endPoint = content.GetEndpoint()?.DisplayName
             };
 
-            Log.Error("{@errorLog}", errorLog);
+            Log.Error("{@errorLog}", errorLog);*/
         }
         private string? GetUserId(HttpContext content)
         {
