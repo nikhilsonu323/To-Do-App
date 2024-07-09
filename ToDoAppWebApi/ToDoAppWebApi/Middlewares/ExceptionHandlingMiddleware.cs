@@ -19,7 +19,7 @@ namespace ToDoAppWebApi.Middlewares
             }
         }
 
-        private string GetError(Exception? exception, HttpContext content)
+        private static string GetError(Exception? exception, HttpContext content)
         {
             string errorMessage = "";
             while (exception != null)
