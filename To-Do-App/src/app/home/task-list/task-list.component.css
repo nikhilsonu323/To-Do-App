@@ -8,6 +8,7 @@ ul.tasks-list li:not(:first-child){
     margin-top: 20px;
 }
 li{
+    cursor: pointer;
     position: relative;
     padding: 22px 24px;
     border-radius: 12px;

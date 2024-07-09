@@ -1,4 +1,6 @@
-﻿using ToDoApp.Repository.Data;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using ToDoApp.Repository.Data;
 using ToDoApp.Repository.Data.Models;
 using ToDoApp.Repository.Interfaces;
 

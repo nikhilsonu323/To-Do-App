@@ -14,6 +14,7 @@ import { Statuses } from '../../Models/StatusModels';
 export class TaskListComponent implements OnInit{
   @Input() tasks: Task[] = [];
   @Input() toShowTaskDetails: boolean = true;
+  taskDetailsPosition: "top" | "bottom" = "bottom"
   // @Input() taskType?: Statuses;
 
   @ViewChild('tasklist') taskListContainer!: ElementRef;
@@ -26,7 +27,14 @@ export class TaskListComponent implements OnInit{
     document.body.addEventListener('click', (event: Event) => this.handleClickOutside(event));
   }
 
-  showTaskDetails(taskId: number){
+  showTaskDetails(taskId: number, event: MouseEvent){
+    let toShowDetailsonTop = window.innerWidth < 550 ? (window.innerHeight - event.clientY)<180 : (window.innerHeight - event.clientY) < 320;
+    if(toShowDetailsonTop){
+      this.taskDetailsPosition = "top";
+    }
+    else{
+      this.taskDetailsPosition = "bottom";
+    }
     this.taskId =  this.taskId === taskId ? null : taskId;
   }
 

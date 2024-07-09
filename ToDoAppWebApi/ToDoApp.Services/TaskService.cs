@@ -29,7 +29,16 @@ namespace ToDoApp.Services
 
         public async Task<List<TaskDTO>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
         {
-            var tasks = await _taskRepo.GetTasks(userId, createdOn, completedOn, statusId);
+            string sortBy = string.Empty;
+            if(statusId != null)
+            {
+                if (statusId.Value == (int)Statuses.Active)
+                    sortBy = "createdOn";
+
+                if (statusId.Value == (int)Statuses.Completed)
+                    sortBy = "completedOn";
+            }
+            var tasks = await _taskRepo.GetTasks(userId, createdOn, completedOn, statusId, sortBy);
             return Mapper.MapToTaskDTO(tasks);
         }
 

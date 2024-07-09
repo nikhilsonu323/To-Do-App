@@ -39,15 +39,24 @@ namespace ToDoApp.Repository
                 .FirstOrDefaultAsync(task => task.TaskId == taskId && task.UserId == userId);
         }
 
-        public async Task<List<ToDoTask>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
+        public async Task<List<ToDoTask>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId, string? sortBy = null)
         {
-            var tasks = await _dbContext.Tasks.Include(task => task.Status)
+            var query = _dbContext.Tasks.Include(task => task.Status)
                     .Where(task => task.UserId == userId &&
                     (createdOn == null || createdOn.Value.Date == task.CreatedOn.Date) &&
                     (completedOn == null || (task.CompletedOn != null && task.CompletedOn.Value.Date == completedOn.Value.Date)) &&
-                    (statusId == null || statusId.Value == task.StatusId)
-                    ).ToListAsync();
-            return tasks;
+                    (statusId == null || statusId.Value == task.StatusId));
+            switch (sortBy)
+            {
+                case "createdOn":
+                    query = query.OrderByDescending(task => task.CreatedOn);
+                    break;
+
+                case "completedOn":
+                    query = query.OrderByDescending(task => task.CompletedOn);
+                    break;
+            }
+            return await query.ToListAsync();            
         }
 
         public async Task<List<ToDoTask>> GetAll(int userId)

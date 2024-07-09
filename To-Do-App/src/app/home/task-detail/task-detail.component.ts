@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Statuses } from '../../Models/StatusModels';
 import { Task } from '../../Models/Task';
 import { TaskService } from '../../Services/task.service';
@@ -15,6 +15,9 @@ import { ToastService } from '../../Services/toast.service';
 })
 export class TaskDetailComponent{
   @Input() task!: Task;
+  @Input() position: "top" | "bottom" = "bottom";
+
+  @ViewChild('taskDetail') taskDetail!:ElementRef;
 
   statuses = Statuses
 
@@ -25,10 +28,11 @@ export class TaskDetailComponent{
   }
   
   toggleStatus(){
+    let msg = this.task.statusId == Statuses.Active ? "Task completed! It is now listed as 'Completed'." : "Task reopened. You can find it under 'Active Tasks'.";
     this.task.statusId = this.task.statusId === Statuses.Active ? Statuses.Completed : Statuses.Active;
     this.taskService.updateTask(this.task).subscribe({
       next: () => {
-        this.toastService.show("Task updated sucessfully","success");
+        this.toastService.show(msg,"success");
         this.taskService.onUsersTasksChanged()
       },
       error: () =>{
@@ -38,6 +42,10 @@ export class TaskDetailComponent{
   }
 
   deleteTask(){
+    let msg = `Are you sure you want to delete the task?\nTitle = ${this.task.title}`
+    if (!confirm(msg)) {
+      return;
+    }
     this.taskService.deleteTask(this.task.taskId).subscribe({
       next: () => {
         this.toastService.show("Task deleted sucessfully","success");

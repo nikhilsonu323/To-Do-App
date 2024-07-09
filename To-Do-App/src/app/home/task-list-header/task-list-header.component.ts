@@ -1,5 +1,5 @@
 import { DatePipe, NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TaskService } from '../../Services/task.service';
 import { ToastService } from '../../Services/toast.service';
 
@@ -10,13 +10,20 @@ import { ToastService } from '../../Services/toast.service';
   templateUrl: './task-list-header.component.html',
   styleUrl: './task-list-header.component.css'
 })
-export class TaskListHeaderComponent {
+export class TaskListHeaderComponent implements OnInit {
   today = new Date()
   
   @Input() heading: string = '';
   @Input() showDelete: boolean = false;
+  taskLength = 0;
 
   constructor(private taskService: TaskService, private toastservice: ToastService){ }
+
+  ngOnInit(): void {
+    this.taskService.tasksLength.subscribe(taskLength =>{
+      this.taskLength = taskLength;
+    })
+  }
 
   deleteAllTask(){
     if (!confirm('Are you sure you want to delete all tasks?')) {

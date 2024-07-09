@@ -1,4 +1,4 @@
-<div class="details-box" [ngClass]="{'bg-orange': task.statusId == statuses.Completed}">
+<div class="details-box" [ngClass]="{'bg-orange': task.statusId == statuses.Completed, 'on-top': position == 'top', 'on-bottom': position == 'bottom' }">
     <div class="task-detail flex-column">
         <div class="details flex-column">
             <div class="title flex-column">

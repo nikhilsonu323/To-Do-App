@@ -1,8 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Task } from '../Models/Task';
-import { Subject } from 'rxjs';
-import { environment } from '../../environments/environment.development';
+import { Subject, catchError, map } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { ToastService } from './toast.service';
 
 
 @Injectable({
@@ -12,10 +13,11 @@ export class TaskService {
 
   private url = environment.tasks;
 
-  onTasksChange: Subject<void> = new Subject()
+  onTasksChange: Subject<void> = new Subject();
   editTask: Subject<Task> = new Subject();
+  tasksLength: Subject<number> = new Subject();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastService: ToastService) { }
 
   getTasks(queryParams?: {
     createdOn?: Date,
@@ -33,7 +35,15 @@ export class TaskService {
       params = params.append("statusId", queryParams.statusId)
     }
 
-    return this.http.get<Task[]>(this.url, {params: params});
+    return this.http.get<Task[]>(this.url, {params: params}).pipe(map(tasks =>{
+      this.tasksLength.next(tasks.length);
+      return tasks;
+    }),
+    catchError(err=>{
+      if(err.status != 401)
+        this.toastService.show("Failed to retrieve tasks. Check your internet connection and try again.","error")
+      throw err;
+    }));
   }
 
   addTask(task: Task){

@@ -12,7 +12,6 @@ namespace ToDoAppWebApi.Validators
             .NotEmpty().WithMessage("{PropertyName} is Required")
             .MaximumLength(50).WithMessage("{PropertyName} cannot exceed 50 characters.");
 
-
             RuleFor(user => user.Password)
             .Cascade(CascadeMode.Stop)
             .NotEmpty().WithMessage("{PropertyName} is Required")

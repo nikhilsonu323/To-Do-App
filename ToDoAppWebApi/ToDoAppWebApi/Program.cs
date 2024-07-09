@@ -54,7 +54,7 @@ internal class Program
         builder.Services.AddDependencies();
 
 
-        builder.Services.AddCors(opt =>
+        builder.Services.AddCors (opt =>
         {
             opt.AddPolicy("AllowAll", policy =>
             {

@@ -51,7 +51,7 @@ namespace ToDoApp.Services.Utilities
             };
             var token = new JwtSecurityToken(
                 claims: userClaims,
-                expires: DateTime.Now.AddHours(1),
+                expires: DateTime.Now.AddDays(1),
                 signingCredentials: signingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

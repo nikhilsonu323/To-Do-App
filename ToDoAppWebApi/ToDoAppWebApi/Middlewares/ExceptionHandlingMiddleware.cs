@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿
+using Serilog;
 using System.Security.Claims;
 
 namespace ToDoAppWebApi.Middlewares

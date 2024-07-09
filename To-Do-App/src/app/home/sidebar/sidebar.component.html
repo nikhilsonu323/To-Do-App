@@ -23,7 +23,10 @@
     <div class="navigations">
         <ul>
             <li *ngFor="let route of getRoutesKeys()">
-                <a [routerLink]="route" routerLinkActive="bg-orange">{{routes[route]}}</a>
+                <a [routerLink]="route" routerLinkActive="bg-orange">
+                    <span class="route-text">{{routes[route]}} </span>
+                    
+                </a>
             </li>
         </ul>
     </div>

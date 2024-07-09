@@ -1,10 +1,10 @@
 .spinner{
-    border: 12px solid var(--gray);
-    border-top: 12px solid var(--orange);
+    border: 8px solid var(--gray);
+    border-top: 8px solid var(--orange);
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    animation: spin 1.5s linear infinite;
+    animation: spin 1.7s linear infinite;
 }
 
 @keyframes spin {
@@ -14,8 +14,8 @@
 
 @media (max-width: 550px) {
     .spinner{
-        border: 10px solid var(--gray);
-        border-top: 10px solid var(--orange);
+        border: 6px solid var(--gray);
+        border-top: 6px solid var(--orange);
         width: 70px;
         height: 70px;
     }

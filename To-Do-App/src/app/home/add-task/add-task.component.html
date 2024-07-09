@@ -16,7 +16,7 @@
         </ul>
         <div class="buttons">
             <button type="button" class="btn-cancel" (click)="onDialogClose()">Cancel</button>
-            <button class="btn-save bg-orange">Save</button>
+            <button class="btn-save bg-orange">{{task ? "Update" : "Save"}}</button>
         </div>
     </form>
 </div>
