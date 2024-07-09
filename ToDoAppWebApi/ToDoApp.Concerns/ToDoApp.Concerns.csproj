@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.IdentityModel" Version="7.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="7.6.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="7.6.2" />
   </ItemGroup>
 
 </Project>
