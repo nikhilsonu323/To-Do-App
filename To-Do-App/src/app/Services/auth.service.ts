@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, tap, throwError } from 'rxjs';
 import { ToastService } from './toast.service';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
