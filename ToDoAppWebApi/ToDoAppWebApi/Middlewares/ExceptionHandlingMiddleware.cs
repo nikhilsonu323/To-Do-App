@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Microsoft.EntityFrameworkCore;
+using Serilog;
 using System.Security.Claims;
 
 namespace ToDoAppWebApi.Middlewares
@@ -11,15 +12,15 @@ namespace ToDoAppWebApi.Middlewares
             {
                 await next.Invoke(context);
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-                context.Response.StatusCode = 200;
+                context.Response.StatusCode = 500;
                 await context.Response.WriteAsync(exception.Message);
-                await context.Response.WriteAsync( GetError(exception, context));
+                await context.Response.WriteAsync(GetError(exception, context));
             }
         }
 
-        private static string GetError(Exception? exception, HttpContext content)
+        private   string GetError(Exception? exception, HttpContext content)
         {
             string errorMessage = "";
             while (exception != null)
