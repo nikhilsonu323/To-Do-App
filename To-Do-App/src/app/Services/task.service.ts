@@ -15,7 +15,6 @@ export class TaskService {
 
   onTasksChange: Subject<void> = new Subject();
   editTask: Subject<Task> = new Subject();
-  tasksLength: Subject<number> = new Subject();
 
   constructor(private http: HttpClient, private toastService: ToastService) { }
 
@@ -35,13 +34,11 @@ export class TaskService {
       params = params.append("statusId", queryParams.statusId)
     }
 
-    return this.http.get<Task[]>(this.url, {params: params}).pipe(map(tasks =>{
-      this.tasksLength.next(tasks.length);
-      return tasks;
-    }),
+    return this.http.get<Task[]>(this.url, {params: params}).pipe(
     catchError(err=>{
       if(err.status != 401)
-        this.toastService.show("Failed to retrieve tasks. Check your internet connection and try again.","error")
+        this.toastService.show("Failed to retrieve tasks. Check your internet connection and try again.","error");
+      console.log(err);
       throw err;
     }));
   }

@@ -1,5 +1,5 @@
 .stat-card{
-    padding: 30px 40px;
+    padding: 32px;
     border-radius: 12px;
     display: grid;
     place-items: center;
@@ -32,7 +32,7 @@
     .stat-card{
         width: auto;
         height: auto;
-        padding: 28px 32px;
+        padding: 28px 22px;
     }
     .stat-percent{
         font-size: 26px;

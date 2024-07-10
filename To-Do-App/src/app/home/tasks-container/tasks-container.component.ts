@@ -7,11 +7,13 @@ import { TaskService } from '../../Services/task.service';
 import { Statuses } from '../../Models/StatusModels';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { NoTaskMessageComponent } from '../no-task-message/no-task-message.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'tasks-container',
   standalone: true,
-  imports: [HeaderComponent, TaskListHeaderComponent, TaskListComponent],
+  imports: [HeaderComponent, TaskListHeaderComponent, TaskListComponent,NoTaskMessageComponent, NgIf],
   templateUrl: './tasks-container.component.html',
   styleUrl: './tasks-container.component.css'
 })
@@ -37,6 +39,11 @@ export class TasksContainerComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.taskChangesSubsricption.unsubscribe()
+  }
+  
+  getMessage(){
+    let taskTypeString = this.taskType == Statuses.Active ? "Active" : "Completed";
+    return "There are no "+ taskTypeString +" tasks to display at this time."
   }
 
   private fetchTasks(){

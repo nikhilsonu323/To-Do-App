@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Security.Claims;
 using ToDoApp.Concerns;
 using ToDoApp.Contracts;
@@ -47,15 +48,6 @@ namespace ToDoAppWebApi.Controllers
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
             var tasks = await _taskService.GetTasks(userId.Value, createdOn, completedOn, statusId);
-            return Ok(tasks);
-        }
-
-        [HttpGet("All")]
-        public async Task<IActionResult> GetAllTasks()
-        {
-            var userId = GetUserId();
-            if (userId == null) { return BadRequest(); }
-            var tasks = await _taskService.GetAllTasks(userId.Value);
             return Ok(tasks);
         }
 

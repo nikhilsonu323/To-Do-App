@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
 using Serilog;
 using System.Security.Claims;
 
@@ -6,21 +6,41 @@ namespace ToDoAppWebApi.Middlewares
 {
     public class ExceptionHandlingMiddleware : IMiddleware
     {
+        private readonly IWebHostEnvironment _env;
+
+        public ExceptionHandlingMiddleware(IWebHostEnvironment env)
+        {
+            _env = env;
+        }
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
             {
                 await next.Invoke(context);
             }
+            catch(SqlException exception)
+            {
+                await HandleExcetionAsync(exception, context, "Database_Error");
+            }
             catch (Exception exception)
             {
-                context.Response.StatusCode = 500;
-                await context.Response.WriteAsync(exception.Message);
-                await context.Response.WriteAsync(GetError(exception, context));
+                await HandleExcetionAsync(exception, context);
             }
         }
 
-        private   string GetError(Exception? exception, HttpContext content)
+        private async Task HandleExcetionAsync(Exception? exception, HttpContext context, string? errorMessage = null)
+        {
+            context.Response.StatusCode = 500;
+            await context.Response.WriteAsync(errorMessage ?? exception!.Message);
+            errorMessage = GetErrorMessage(exception);
+            await context.Response.WriteAsync(errorMessage);
+            if (_env.IsDevelopment())
+            {
+                LogError(context, errorMessage);
+            }
+        }
+
+        private string GetErrorMessage(Exception? exception)
         {
             string errorMessage = "";
             while (exception != null)
@@ -29,8 +49,11 @@ namespace ToDoAppWebApi.Middlewares
                 exception = exception.InnerException;
             }
             return errorMessage;
-/*            var userId = GetUserId(content);
+        }
 
+        private void LogError(HttpContext content, string errorMessage)
+        {
+            var userId = GetUserId(content);
             var errorLog = new
             {
                 message = errorMessage,
@@ -38,8 +61,9 @@ namespace ToDoAppWebApi.Middlewares
                 endPoint = content.GetEndpoint()?.DisplayName
             };
 
-            Log.Error("{@errorLog}", errorLog);*/
+            Log.Error("{@errorLog}", errorLog);
         }
+
         private string? GetUserId(HttpContext content)
         {
             var userIdString = content.User.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value;

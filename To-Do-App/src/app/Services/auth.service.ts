@@ -3,7 +3,6 @@ import { User } from '../Models/AuthModels';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, tap, throwError } from 'rxjs';
-import { ToastService } from './toast.service';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class AuthService {
   private url = environment.auth;
   token: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router, private toastService: ToastService) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   login(user: User){
     return this.http.post<{token: string}>(this.url+'/login',user).pipe(

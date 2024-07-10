@@ -15,7 +15,6 @@ export class TaskListComponent implements OnInit{
   @Input() tasks: Task[] = [];
   @Input() toShowTaskDetails: boolean = true;
   taskDetailsPosition: "top" | "bottom" = "bottom"
-  // @Input() taskType?: Statuses;
 
   @ViewChild('tasklist') taskListContainer!: ElementRef;
 

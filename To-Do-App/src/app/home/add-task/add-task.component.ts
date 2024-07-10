@@ -77,7 +77,6 @@ export class AddTaskComponent implements OnInit, OnDestroy{
         this.closeModal();
       },
       error: (err) => {
-        console.log(err);
         this.toastService.show("An Error occured, Couldn't add Task", "error");
       }  
     })

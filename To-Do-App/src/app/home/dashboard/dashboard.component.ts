@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { TaskListHeaderComponent } from '../task-list-header/task-list-header.component';
 import { TaskListComponent } from '../task-list/task-list.component';
 import { Task } from '../../Models/Task';
@@ -8,11 +8,12 @@ import { TaskService } from '../../Services/task.service';
 import { Statuses } from '../../Models/StatusModels';
 import { StatCardComponent } from '../stat-card/stat-card.component';
 import { Subscription, forkJoin } from 'rxjs';
+import { NoTaskMessageComponent } from '../no-task-message/no-task-message.component';
 
 @Component({
   selector: 'dashboard',
   standalone: true,
-  imports: [HeaderComponent, NgFor, TaskListHeaderComponent, TaskListComponent, StatCardComponent],
+  imports: [HeaderComponent, NgFor, TaskListHeaderComponent, TaskListComponent, StatCardComponent, NgIf, NgClass ,NoTaskMessageComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

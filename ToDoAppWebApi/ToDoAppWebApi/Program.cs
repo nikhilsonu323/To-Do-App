@@ -28,10 +28,7 @@ internal class Program
 
         builder.Services.AddDbContext<ToDoAppContext>(opt =>
         {
-            opt.UseSqlServer(builder.Configuration.GetConnectionString("ToDoAppConnection"), options =>
-            {
-                options.EnableRetryOnFailure();
-            });
+            opt.UseSqlServer(builder.Configuration.GetConnectionString("ToDoAppConnection"));
         });
 
         builder.Services.AddAuthentication(opt =>
