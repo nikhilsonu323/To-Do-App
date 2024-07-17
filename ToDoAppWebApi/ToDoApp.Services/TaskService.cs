@@ -7,27 +7,27 @@ namespace ToDoApp.Services
 {
     public class TaskService : ITaskService
     {
-        private ITaskRepo _taskRepo;
+        private ITaskRepository _taskRepo;
 
-        public TaskService(ITaskRepo taskRepo)
+        public TaskService(ITaskRepository taskRepo)
         {
             _taskRepo = taskRepo;
         }
 
-        public void AddTask(TaskDTO task, int userId)
+        public async Task AddTasksAync(TaskDTO task, int userId)
         {
             task.CreatedOn = DateTime.Now;
-            _taskRepo.AddTask(Mapper.MapToTask(task, userId));
+            await _taskRepo.AddTaskAsync(Mapper.MapToTask(task, userId));
         }
 
-        public async Task<TaskDTO?> GetTask(int taskId, int userId)
+        public async Task<TaskDTO?> GetTaskAync(int taskId, int userId)
         {
-            var task = await _taskRepo.GetTask(taskId, userId);
+            var task = await _taskRepo.GetTaskAsync(taskId, userId);
             if(task == null) { return null; }
             return Mapper.MapToTaskDTO(task);
         }
 
-        public async Task<List<TaskDTO>> GetTasks(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
+        public async Task<List<TaskDTO>> GetTasksAync(int userId, DateTime? createdOn, DateTime? completedOn, int? statusId)
         {
             string sortBy = string.Empty;
             if(statusId != null)
@@ -38,33 +38,33 @@ namespace ToDoApp.Services
                 if (statusId.Value == (int)Statuses.Completed)
                     sortBy = "completedOn";
             }
-            var tasks = await _taskRepo.GetTasks(userId, createdOn, completedOn, statusId, sortBy);
+            var tasks = await _taskRepo.GetTasksAsync(userId, createdOn, completedOn, statusId, sortBy);
             return Mapper.MapToTaskDTO(tasks);
         }
 
-        public async Task<List<TaskDTO>> GetAllTasks(int userId)
+        public async Task<List<TaskDTO>> GetAllTasksAync(int userId)
         {
-            var tasks = await _taskRepo.GetAll(userId);
+            var tasks = await _taskRepo.GetAllAsync(userId);
             return Mapper.MapToTaskDTO(tasks);
         }
 
-        public Task<bool> UpdateTask(TaskDTO task, int userId)
+        public Task<bool> UpdateTaskAync(TaskDTO task, int userId)
         {
             if(task.StatusId == (int)Statuses.Completed)
             {
                 task.CompletedOn = DateTime.Now;
             }
-            return _taskRepo.UpdateTask(Mapper.MapToTask(task, userId));
+            return _taskRepo.UpdateTaskAsync(Mapper.MapToTask(task, userId));
         }
 
-        public Task<bool> DeleteTask(int taskId, int userId)
+        public Task<bool> DeleteTaskAync(int taskId, int userId)
         {
-            return _taskRepo.DeleteTask(taskId, userId);
+            return _taskRepo.DeleteTaskAsync(taskId, userId);
         }
 
-        public void DeleteAll(int userId, DateTime? date)
+        public async Task DeleteAllAync(int userId, DateTime? createdOn, DateTime? completedOn)
         {
-            _taskRepo.DeleteAll(userId, date);
+            await _taskRepo.DeleteAllAsync(userId, createdOn, completedOn);
         }
 
     }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Security.Claims;
 using ToDoApp.Concerns;
 using ToDoApp.Contracts;
@@ -21,11 +20,11 @@ namespace ToDoAppWebApi.Controllers
 
 
         [HttpPost("Add")]
-        public IActionResult AddTask([FromBody] TaskDTO task)
+        public async Task<IActionResult> AddTask([FromBody] TaskDTO task)
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            _taskService.AddTask(task, userId.Value);
+            await _taskService.AddTasksAync(task, userId.Value);
             return Created();
         }
 
@@ -34,7 +33,7 @@ namespace ToDoAppWebApi.Controllers
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            var isUpdated = await _taskService.UpdateTask(task, userId.Value);
+            var isUpdated = await _taskService.UpdateTaskAync(task, userId.Value);
             if (!isUpdated)
             {
                 return NotFound();
@@ -47,7 +46,7 @@ namespace ToDoAppWebApi.Controllers
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            var tasks = await _taskService.GetTasks(userId.Value, createdOn, completedOn, statusId);
+            var tasks = await _taskService.GetTasksAync(userId.Value, createdOn, completedOn, statusId);
             return Ok(tasks);
         }
 
@@ -56,7 +55,7 @@ namespace ToDoAppWebApi.Controllers
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            var tasks = await _taskService.GetTask(taskId, userId.Value);
+            var tasks = await _taskService.GetTaskAync(taskId, userId.Value);
             return Ok(tasks);
         }
 
@@ -66,17 +65,17 @@ namespace ToDoAppWebApi.Controllers
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            var isDeleted = await _taskService.DeleteTask(taskId, userId.Value);
+            var isDeleted = await _taskService.DeleteTaskAync(taskId, userId.Value);
             if (!isDeleted) { return NotFound(); }
             return NoContent();
         }
 
         [HttpDelete("")]
-        public IActionResult DeleteAllTasks([FromQuery] DateTime? date)
+        public async Task<IActionResult> DeleteAllTasks([FromQuery] DateTime? createdOn, [FromQuery] DateTime? completedOn)
         {
             var userId = GetUserId();
             if (userId == null) { return BadRequest(); }
-            _taskService.DeleteAll(userId.Value, date);
+            await _taskService.DeleteAllAync(userId.Value, createdOn, completedOn);
             return NoContent();
         }
 

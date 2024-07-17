@@ -4,18 +4,18 @@ namespace ToDoApp.Contracts
 {
     public interface ITaskService
     {
-        void AddTask(TaskDTO task, int userId);
+        Task AddTasksAync(TaskDTO task, int userId);
 
-        Task<bool> UpdateTask(TaskDTO task, int userId);
+        Task<bool> UpdateTaskAync(TaskDTO task, int userId);
 
-        Task<TaskDTO?> GetTask(int taskId, int userId);
+        Task<TaskDTO?> GetTaskAync(int taskId, int userId);
 
-        Task<List<TaskDTO>> GetTasks(int userId, DateTime? createdAt, DateTime? completedAt, int? statusId);
+        Task<List<TaskDTO>> GetTasksAync(int userId, DateTime? createdAt, DateTime? completedAt, int? statusId);
 
-        Task<List<TaskDTO>> GetAllTasks(int userId);
+        Task<List<TaskDTO>> GetAllTasksAync(int userId);
 
-        Task<bool> DeleteTask(int taskId, int userId);
+        Task<bool> DeleteTaskAync(int taskId, int userId);
 
-        void DeleteAll(int userId, DateTime? date);
+        Task DeleteAllAync(int userId, DateTime? createdOn, DateTime? completedOn);
     }
 }

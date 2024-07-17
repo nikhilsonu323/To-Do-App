@@ -16,9 +16,9 @@ namespace ToDoAppWebApi.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login(UserDTO loginDetails)
+        public async Task<IActionResult> Login(UserDTO loginDetails)
         {
-            var token = _authService.Login(loginDetails);
+            var token = await _authService.LoginAsync(loginDetails);
             if (token == null)
             {
                 return BadRequest(new
@@ -30,9 +30,9 @@ namespace ToDoAppWebApi.Controllers
         }
 
         [HttpPost("signup")]
-        public IActionResult SignUp(UserDTO userDetails)
+        public async Task<IActionResult> SignUp(UserDTO userDetails)
         {
-            var result = _authService.Register(userDetails);
+            var result = await _authService.RegisterAsync(userDetails);
             if (!result)
             {
                 return Unauthorized(new

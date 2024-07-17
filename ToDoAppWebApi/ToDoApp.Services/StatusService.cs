@@ -7,19 +7,19 @@ namespace ToDoApp.Services
 {
     public class StatusService : IStatusService
     {
-        private IStatusRepo _statusRepo;
+        private readonly IStatusRepository _statusRepo;
 
-        public StatusService(IStatusRepo statusRepo)
+        public StatusService(IStatusRepository statusRepo)
         {
             _statusRepo = statusRepo;
         }
 
-        public void Add(StatusDTO status)
+        public async Task AddAsync(StatusDTO status)
         { 
-            _statusRepo.Add(Mapper.MapToStatus(status));
+            await _statusRepo.AddAsync(Mapper.MapToStatus(status));
         }
 
-        public async Task<List<StatusDTO>> GetStatuses()
+        public async Task<List<StatusDTO>> GetStatusesAsync()
         {
             var statuses =  await _statusRepo.GetStatuses();
             return Mapper.MapToStatusDTO(statuses);

@@ -19,7 +19,7 @@ namespace ToDoAppWebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _statusService.GetStatuses());
+            return Ok(await _statusService.GetStatusesAsync());
         }
     }
 }

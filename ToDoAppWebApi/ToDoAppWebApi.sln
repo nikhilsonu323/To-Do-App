@@ -5,13 +5,13 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoAppWebApi", "ToDoAppWebApi\ToDoAppWebApi.csproj", "{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Repository", "ToDoApp.Repository\ToDoApp.Repository.csproj", "{2CC00E99-F10A-46C4-8E43-AC22AA412D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Repository", "ToDoApp.Repository\ToDoApp.Repository.csproj", "{2CC00E99-F10A-46C4-8E43-AC22AA412D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Services", "ToDoApp.Services\ToDoApp.Services.csproj", "{BEFCB0DF-0EF2-4A22-9EE2-BF950E36A193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Services", "ToDoApp.Services\ToDoApp.Services.csproj", "{BEFCB0DF-0EF2-4A22-9EE2-BF950E36A193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Contracts", "ToDoApp.Contracts\ToDoApp.Contracts.csproj", "{3354E767-E232-4431-AD0F-7609FD1E44A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Contracts", "ToDoApp.Contracts\ToDoApp.Contracts.csproj", "{3354E767-E232-4431-AD0F-7609FD1E44A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Concerns", "ToDoApp.Concerns\ToDoApp.Concerns.csproj", "{7DCD70D8-2D76-4477-A642-C00244A2E23A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Concerns", "ToDoApp.Concerns\ToDoApp.Concerns.csproj", "{7DCD70D8-2D76-4477-A642-C00244A2E23A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

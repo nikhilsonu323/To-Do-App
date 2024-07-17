@@ -8,18 +8,18 @@ namespace ToDoApp.Services
     public class AuthService : IAuthService
     {
 
-        private readonly IUserRepo _userRepo;
+        private readonly IUserRepository _userRepo;
         private readonly IAuthHelper _authHelper;
 
-        public AuthService(IUserRepo userRepo, IAuthHelper authHelper)
+        public AuthService(IUserRepository userRepo, IAuthHelper authHelper)
         {
             _userRepo = userRepo;
             _authHelper = authHelper;
         }
 
-        public string? Login(UserDTO loginUser)
+        public async Task<string?> LoginAsync(UserDTO loginUser)
         {
-            var user = _userRepo.GetUser(loginUser.Username);
+            var user = await _userRepo.GetUserAsync(loginUser.Username);
             if (user == null)
             {
                 return null;
@@ -33,9 +33,10 @@ namespace ToDoApp.Services
                 return _authHelper.GetToken(user.UserId);
             }
         }
-        public bool Register(UserDTO userDTO)
+
+        public async Task<bool> RegisterAsync(UserDTO userDTO)
         {
-            var user = _userRepo.GetUser(userDTO.Username);
+            var user = await _userRepo.GetUserAsync(userDTO.Username);
             if (user != null)
             {
                 return false;
@@ -43,7 +44,7 @@ namespace ToDoApp.Services
             var userToAdd = Mapper.MapToUser(userDTO);
             userToAdd.Password = _authHelper.Hash(userDTO.Password);
 
-            _userRepo.AddUser(userToAdd);
+            await _userRepo.AddUserAsync(userToAdd);
             return true;
         }
     }

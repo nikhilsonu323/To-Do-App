@@ -18,9 +18,9 @@ namespace ToDoAppWebApi
             services.AddTransient<IStatusService, StatusService>();
             services.AddTransient<IAuthHelper, AuthHelper>();
 
-            services.AddScoped<IUserRepo, UserRepo>();
-            services.AddScoped<ITaskRepo, TaskRepo>();
-            services.AddScoped<IStatusRepo, StatusRepo>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITaskRepository, TaskRepository>();
+            services.AddScoped<IStatusRepository, StatusRepository>();
 
             return services;
         }
