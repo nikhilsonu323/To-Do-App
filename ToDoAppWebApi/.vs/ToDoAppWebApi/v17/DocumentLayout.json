@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\middlewares\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\middlewares\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|c:\\users\\nikhil.m\\onedrive - technovert\\documents\\github\\to-do-app\\todoappwebapi\\todoappwebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5E9EF8D0-9261-4173-A0FB-36232C06FF5E}|ToDoAppWebApi\\ToDoAppWebApi.csproj|solutionrelative:todoappwebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Middlewares\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "ToDoAppWebApi\\Middlewares\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Middlewares\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "ToDoAppWebApi\\Middlewares\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA5wBUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T09:43:00.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ToDoAppWebApi\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\appsettings.Development.json",
+              "RelativeToolTip": "ToDoAppWebApi\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T09:16:04.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "ToDoAppWebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\appsettings.json",
+              "RelativeToolTip": "ToDoAppWebApi\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T06:56:58.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Program.cs",
+              "RelativeDocumentMoniker": "ToDoAppWebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\nikhil.m\\OneDrive - Technovert\\Documents\\GitHub\\To-Do-App\\ToDoAppWebApi\\ToDoAppWebApi\\Program.cs",
+              "RelativeToolTip": "ToDoAppWebApi\\Program.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T07:39:32.325Z",
+              "EditorCaption": ""
             }
           ]
         }
